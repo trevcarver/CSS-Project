@@ -91,8 +91,14 @@ header {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
+          padding: 10px 30px;
+          background-color: $color-1;
           li {
               width: 10%;
+              a {
+                  display: block;
+                  color: $color-5;
+              }
           }
       }
   }
@@ -103,8 +109,12 @@ header {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        text-align: center;
         li {
             width: 12.5%;
+            a {
+                display: block;
+            }
         }
     }
   }
