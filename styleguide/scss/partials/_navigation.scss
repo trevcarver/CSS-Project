@@ -93,6 +93,7 @@ header {
           justify-content: space-between;
           padding: 10px 30px;
           background-color: $color-1;
+          text-align: center;
           li {
               width: 10%;
               a {
@@ -114,6 +115,7 @@ header {
             width: 12.5%;
             a {
                 display: block;
+                color: $color-3;
             }
         }
     }
