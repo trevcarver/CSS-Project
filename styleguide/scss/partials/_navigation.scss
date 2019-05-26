@@ -89,6 +89,22 @@ header {
   .cd-primary-nav {
       ul {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
+          justify-content: space-between;
+          li {
+              width: 10%;
+          }
       }
+  }
+
+  // secondary navigation
+  .cd-secondary-nav {
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        li {
+            width: 12.5%;
+        }
+    }
   }
