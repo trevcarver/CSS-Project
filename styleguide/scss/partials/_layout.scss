@@ -25,21 +25,3 @@ $L:     1600px;
   float: $float-direction;
 }
 
-// grid styles to be used for mobile
-
-@mixin grid124() {
-  display: grid;
-  grid-template-columns: $r1 $r2 $r4 $r2 $r1;
-}
-
-@mixin gridspanfull() {
-  grid-row: 1/-1;
-}
-
-@mixin gridspanlg() {
-  grid-row: 2/-2;
-}
-
-@mixin gridspansmid() {
-  grid-row: 3/-3;
-}
