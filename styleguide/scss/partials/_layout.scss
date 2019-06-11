@@ -27,21 +27,33 @@ $L:     1600px;
 
 // grid styles to be used for mobile
 
-@mixin grid124() {
+@mixin grid124 {
   display: grid;
-  grid-template-columns: $r1 $r2 $r4 $r2 $r1;
+  grid-template-columns: fr1 fr2 fr4 fr2 fr1;
 }
 
-@mixin gridspanfull() {
+@mixin gridspanfull {
   grid-row: 1/-1;
 }
 
-@mixin gridspanlg() {
+@mixin gridspanlg {
   grid-row: 2/-2;
 }
 
-@mixin gridspansmid() {
+@mixin gridspansmid {
   grid-row: 3/-3;
+}
+
+.page-wrapper {
+  @include grid124;
+}
+
+header {
+  @include gridspanlg;
+}
+
+.preamble, .summary, .explanation, .participation, .benefits, .requirements, footer, .design-archives, .zen-resources, .design-selection{
+  @include gridspanlg;
 }
 
 // grid styles to be used for desktop
