@@ -1,0 +1,45 @@
+@import 'partials/reset';
+@import 'partials/prefix-mixins';
+@import 'partials/layout'; // responsive grid and media queries
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Fugaz+One|Major+Mono+Display|Monoton|Ultra|Viga&display=swap');
+
+// color palette - these colors will be the color swatches of the Colors section
+
+$color-1: #302746; // Dark Purple
+$color-2: #233541; // Dark Cyan
+$color-3: #4C2742; // Purple
+$color-4: #e6e6e6; // light grey
+$color-5: #ffffff; // white
+
+// additional colors
+
+$success: #6fce72; // green
+$alert: $color-3; // red
+
+// fonts
+$primary-font: 'Viga', sans-serif;
+$secondary-font: 'Ultra', serif;
+
+// photos
+$photo-1: url('..\images\braden-collum-87874-unsplash.jpg');
+$photo-2: url('..\images\chase-kinney-801570-unsplash.jpg');
+$photo-3: url('..\images\edgar-chaparro-669210-unsplash.jpg');
+$photo-4: url('..\images\hipcravo-1370862-unsplash.jpg');
+$photo-5: url('..\images\rex-tavanh-722707-unsplash.jpg');
+$photo-6: url('..\images\scott-webb-22420-unsplash.jpg');
+$photo-7: url('..\images\scott-webb-22538-unsplash.jpg');
+$photo-8: url('..\images\scott-webb-22620-unsplash.jpg');
+$photo-9: url('..\images\victor-freitas-549190-unsplash.jpg');
+$photo-10: url('..\images\victor-freitas-604838-unsplash.jpg');
+
+
+
+@import 'partials/basic-style';
+@import 'partials/background';
+@import 'partials/navigation';
+@import 'partials/patterns';
+@import 'partials/typography';
+@import 'partials/icons';
+@import 'partials/page-title';
+@import 'partials/form';
+@import 'partials/buttons';
