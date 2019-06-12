@@ -31,11 +31,11 @@ $L:     1600px;
   grid-row: 3/-3;
 }
 
-@mixin midspanleft {
+@mixin midspanleft { // medium content span - left (desktop)
   grid-row: 1/-4;
 }
 
-@mixin midspanright {
+@mixin midspanright { // medium content span - right (desktop)
   grid-row: 4/-1;
 }
 
@@ -44,6 +44,12 @@ $L:     1600px;
 @mixin column($percentage, $float-direction:left) {
   width: 100% * $percentage;
   float: $float-direction;
+}
+
+// grid styles for mobile and desktop
+
+.summary, .benefits, .design-selection, .design-archives, .zen-resources, footer {
+  @include largespan;
 }
 
 // grid styles to be used for mobile
@@ -58,16 +64,12 @@ $L:     1600px;
     @include grid124;
   }
   
-  header {
-    @include gridspanlg;
-  }
-  
-  .preamble, .summary, .explanation, .participation, .benefits, .requirements, footer, .design-archives .design-selection {
+  header, .preamble, .explanation, .participation, .requirements {
     @include gridspanlg;
   }
   
   .zen-resources {
-    @include largespan;
+    @include midspan;
   }
 }
 
@@ -79,5 +81,12 @@ $L:     1600px;
     grid-template-rows: repeat(8, 1fr)
   }
 
-  @mixin l
+  header, .summary, .participation {
+    @include midspanleft;
+  }
+
+  .explanation, .requirements{
+    @include midspanright;
+  }
+
 }
