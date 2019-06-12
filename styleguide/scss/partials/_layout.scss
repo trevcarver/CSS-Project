@@ -18,6 +18,27 @@ $L:     1600px;
   }
 }
 
+// column spans
+@mixin fullspan { // fullwidth image span (mobile & desktop)
+  grid-row: 1/-1;
+}
+
+@mixin largespan { // large content span (mobile & desktop)
+  grid-row: 2/-2;
+}
+
+@mixin midspan { // medium content span (mobile)
+  grid-row: 3/-3;
+}
+
+@mixin midspanleft {
+  grid-row: 1/-4;
+}
+
+@mixin midspanright {
+  grid-row: 4/-1;
+}
+
 // super light grid - it works with the .cd-container class inside style.scss
 
 @mixin column($percentage, $float-direction:left) {
@@ -27,33 +48,36 @@ $L:     1600px;
 
 // grid styles to be used for mobile
 
-@mixin grid124 {
-  display: grid;
-  grid-template-columns: fr1 fr2 fr4 fr2 fr1;
+@include MQ($S) {
+  @mixin grid124 {
+    display: grid;
+    grid-template-columns: fr1 fr2 fr4 fr2 fr1;
+  }
+    
+  .page-wrapper {
+    @include grid124;
+  }
+  
+  header {
+    @include gridspanlg;
+  }
+  
+  .preamble, .summary, .explanation, .participation, .benefits, .requirements, footer, .design-archives .design-selection {
+    @include gridspanlg;
+  }
+  
+  .zen-resources {
+    @include largespan;
+  }
 }
 
-@mixin gridspanfull {
-  grid-row: 1/-1;
-}
+// grid styles to be used for larger screens
 
-@mixin gridspanlg {
-  grid-row: 2/-2;
-}
+@include MQ($L) {
+  @mixin grid8 {
+    display: grid;
+    grid-template-rows: repeat(8, 1fr)
+  }
 
-@mixin gridspansmid {
-  grid-row: 3/-3;
+  @mixin l
 }
-
-.page-wrapper {
-  @include grid124;
-}
-
-header {
-  @include gridspanlg;
-}
-
-.preamble, .summary, .explanation, .participation, .benefits, .requirements, footer, .design-archives, .zen-resources, .design-selection{
-  @include gridspanlg;
-}
-
-// grid styles to be used for desktop
