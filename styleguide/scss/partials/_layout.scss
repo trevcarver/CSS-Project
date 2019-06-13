@@ -20,23 +20,35 @@ $L:     1600px;
 
 // column spans
 @mixin fullspan { // fullwidth image span (mobile & desktop)
-  grid-row: 1/-1;
+  grid-column: 1/-1;
 }
 
 @mixin largespan { // large content span (mobile & desktop)
-  grid-row: 2/-2;
+  grid-column: 2/-2;
 }
 
 @mixin midspan { // medium content span (mobile)
-  grid-row: 3/-3;
+  grid-column: 3/-3;
 }
 
 @mixin midspanleft { // medium content span - left (desktop)
-  grid-row: 1/-4;
+  grid-column: 2/-4;
 }
 
 @mixin midspanright { // medium content span - right (desktop)
-  grid-row: 4/-1;
+  grid-column: 4/-2;
+}
+
+// mobile grid layout
+@mixin grid124 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 4fr 2fr 1fr;
+}
+
+// desktop grid layout
+@mixin grid8 {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
 }
 
 // super light grid - it works with the .cd-container class inside style.scss
@@ -54,31 +66,28 @@ $L:     1600px;
 
 // grid styles to be used for mobile
 
-@include MQ($S) {
-  @mixin grid124 {
-    display: grid;
-    grid-template-columns: fr1 fr2 fr4 fr2 fr1;
-  }
-    
-  .page-wrapper {
-    @include grid124;
-  }
-  
-  header, .preamble, .explanation, .participation, .requirements {
-    @include gridspanlg;
-  }
-  
-  .zen-resources {
-    @include midspan;
-  }
+   
+.intro, .main, .sidebar {
+  @include grid124;
+}
+
+header, .preamble, .explanation, .participation, .requirements {
+  @include largespan;
+}
+
+.zen-resources {
+  @include midspan;
+}
+
+.sidebar .wrapper {
+  @include largespan;
 }
 
 // grid styles to be used for larger screens
 
-@include MQ($L) {
-  @mixin grid8 {
-    display: grid;
-    grid-template-rows: repeat(8, 1fr)
+@include MQ(M) {
+  .intro, .main, .sidebar {
+    @include grid8;
   }
 
   header, .summary, .participation {
@@ -87,6 +96,10 @@ $L:     1600px;
 
   .explanation, .requirements{
     @include midspanright;
+  }
+
+  .sidebar .wrapper {
+    @include midspan;
   }
 
 }
