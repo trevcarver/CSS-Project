@@ -53,43 +53,81 @@ table {
   border-spacing: 0;
 }
 
-.summary, .benefits, .design-selection, .design-archives, .zen-resources, footer {
-  grid-column: 2/-2;
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
-.intro, .main, .sidebar {
-  display: grid;
-  grid-template-columns: 1fr 2fr 4fr 2fr 1fr;
+header, .summary, .preamble, .explanation, .participation, .benefits, .requirements, .sidebar .wrapper {
+  width: 100%;
+}
+header > *, .summary > *, .preamble > *, .explanation > *, .participation > *, .benefits > *, .requirements > *, .sidebar .wrapper > * {
+  padding: 2.5% 10%;
 }
 
-header, .preamble, .explanation, .participation, .requirements {
-  grid-column: 2/-2;
+footer {
+  padding: 0 25%;
 }
 
-.zen-resources {
-  grid-column: 3/-3;
+.summary, .benefits, .sidebar .wrapper {
+  background-color: orange;
+  padding: 3em 0;
 }
 
-.sidebar .wrapper {
-  grid-column: 2/-2;
+.preamble::after, .explanation::after {
+  content: "";
+  background-color: red;
+  height: 300px;
+  display: block;
 }
 
 @media only screen and (min-width: 1024px) {
-  .intro, .main, .sidebar {
+  .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+    border: solid black 1px;
   }
 
-  header, .summary, .participation {
-    grid-column: 2/-4;
+  .intro, .supporting, .sidebar {
+    grid-column: 1/-1;
   }
 
   .explanation, .requirements {
+    grid-column: 1/-1;
+    width: 100%;
+  }
+  .explanation > *, .requirements > * {
     grid-column: 4/-2;
   }
 
+  .preamble, .participation {
+    grid-column: 1/-1;
+    width: 100%;
+  }
+  .preamble > *, .participation > * {
+    grid-column: 2/-4;
+  }
+
   .sidebar .wrapper {
+    grid-column: 1/-1;
+    width: 100%;
+  }
+  .sidebar .wrapper > * {
     grid-column: 3/-3;
+  }
+
+  .summary, .benefits, .sidebar .wrapper {
+    background: none;
+    padding: 3em 0;
+  }
+
+  .preamble::after, .explanation::after {
+    content: "";
+    background: none;
+  }
+
+  .preamble, .explanation, .participation, .requirements {
+    background-color: orange;
   }
 }
 /* -------------------------------- 
@@ -130,15 +168,6 @@ input, textarea, select {
   font-size: 1.6rem;
 }
 
-header {
-  position: fixed;
-  height: 50px;
-  width: 100%;
-  top: 0;
-  left: 0;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
 header nav {
   display: inline-block;
 }
@@ -730,10 +759,6 @@ body {
 xNavigation 
 
 -------------------------------- */
-header {
-  background-color: #233541;
-}
-
 .cd-logo {
   /* logo box style */
   background-color: #302746;

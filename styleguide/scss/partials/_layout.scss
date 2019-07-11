@@ -18,12 +18,31 @@ $L:     1600px;
   }
 }
 
-// column spans
-@mixin fullspan { // fullwidth image span (mobile & desktop)
+// mobile layout mixins
+@mixin layoutmobile {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin mobiletext {
+  padding: 2.5% 10%;
+}
+
+@mixin smalltext {
+  padding: 0 25%;
+}
+
+// desktop layout mixins
+@mixin desktoplayout {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+@mixin fullspan { // fullwidth image span
   grid-column: 1/-1;
 }
 
-@mixin largespan { // large content span (mobile & desktop)
+@mixin largespan { // large content span
   grid-column: 2/-2;
 }
 
@@ -31,25 +50,14 @@ $L:     1600px;
   grid-column: 3/-3;
 }
 
-@mixin midspanleft { // medium content span - left (desktop)
+@mixin midspanleft { // medium content span - left
   grid-column: 2/-4;
 }
 
-@mixin midspanright { // medium content span - right (desktop)
+@mixin midspanright { // medium content span - right
   grid-column: 4/-2;
 }
 
-// mobile grid layout
-@mixin grid124 {
-  display: grid;
-  grid-template-columns: 1fr 2fr 4fr 2fr 1fr;
-}
-
-// desktop grid layout
-@mixin grid8 {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-}
 
 // super light grid - it works with the .cd-container class inside style.scss
 
@@ -58,48 +66,111 @@ $L:     1600px;
   float: $float-direction;
 }
 
-// grid styles for mobile and desktop
-
-.summary, .benefits, .design-selection, .design-archives, .zen-resources, footer {
-  @include largespan;
+// mobile layout
+.page-wrapper {
+  @include layoutmobile;
 }
 
-// grid styles to be used for mobile
-
-   
-.intro, .main, .sidebar {
-  @include grid124;
+header, .summary, .preamble, .explanation, .participation, .benefits, .requirements, .sidebar .wrapper {
+  width: 100%;
+  &>* {
+    @include mobiletext;
+  }
 }
 
-header, .preamble, .explanation, .participation, .requirements {
-  @include largespan;
+footer {
+  @include smalltext;
 }
 
-.zen-resources {
-  @include midspan;
+.summary, .benefits, .sidebar .wrapper {
+  background-color: orange;
+  padding: 3em 0;
 }
 
-.sidebar .wrapper {
-  @include largespan;
+.preamble::after, .explanation::after {
+  content: '';
+  background-color: red;
+  height: 300px;
+  display: block;
 }
 
-// grid styles to be used for larger screens
+// desktop layout
 
 @include MQ(M) {
-  .intro, .main, .sidebar {
-    @include grid8;
+  .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper{
+    @include desktoplayout;
+    border: solid black 1px;
   }
 
-  header, .summary, .participation {
-    @include midspanleft;
+  .intro, .supporting, .sidebar {
+    @include fullspan;
   }
 
   .explanation, .requirements{
-    @include midspanright;
+    @include fullspan;
+    width: 100%;
+    &>* {
+      @include midspanright;
+    }
   }
 
-  .sidebar .wrapper {
-    @include midspan;
+  .preamble, .participation{
+    @include fullspan;
+    width: 100%;
+    &>* {
+      @include midspanleft;
+    }
   }
+
+  .sidebar .wrapper{
+    @include fullspan;
+    width: 100%;
+    &>* {
+      @include midspan;
+    }
+  }
+
+  //resets
+  .summary, .benefits, .sidebar .wrapper {
+    background: none;
+    padding: 3em 0;
+  }
+  
+  .preamble::after, .explanation::after {
+    content: '';
+    background: none;
+  }
+  
+  //placeholders
+  .preamble, .explanation, .participation, .requirements {
+    background-color: orange;
+  }
+
 
 }
+
+// .summary, .benefits, .design-selection, .design-archives, .zen-resources, footer {
+//   @include largespan;
+// }
+
+// .preamble::after, .explanation::after, .benefits::after, .requirements::after {
+//   content: '';
+//   @include fullspan;
+//   height: 70vh;
+//   border: solid black 1px;
+//   display: block;
+// }
+
+// // grid styles to be used for mobile
+
+// .intro, .main, .sidebar {
+//   @include grid124;
+// }
+
+// header, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper {
+//   @include largespan;
+// }
+
+// .zen-resources {
+//   @include midspan;
+// }
