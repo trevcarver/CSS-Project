@@ -96,6 +96,57 @@ footer {
 
 // desktop layout
 
+@include MQ(L) {
+  .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper{
+    @include desktoplayout;
+    border: solid black 1px;
+  }
+
+  .intro, .supporting, .sidebar {
+    @include fullspan;
+  }
+
+  .explanation, .requirements{
+    @include fullspan;
+    width: 100%;
+    &>* {
+      @include midspanright;
+    }
+  }
+
+  .preamble, .participation{
+    @include fullspan;
+    width: 100%;
+    &>* {
+      @include midspanleft;
+    }
+  }
+
+  .sidebar .wrapper{
+    @include fullspan;
+    width: 100%;
+    &>* {
+      @include midspan;
+    }
+  }
+
+  //resets
+  .summary, .benefits, .sidebar .wrapper {
+    background: none;
+    padding: 3em 0;
+  }
+  
+  .preamble::after, .explanation::after {
+    content: '';
+    background: none;
+  }
+  
+  //placeholders
+  .preamble, .explanation, .participation, .requirements {
+    background-color: orange;
+  }
+}
+
 @include MQ(M) {
   .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper{
     @include desktoplayout;
