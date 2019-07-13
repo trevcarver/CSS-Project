@@ -70,13 +70,13 @@ footer {
 }
 
 .summary, .benefits, .sidebar .wrapper {
-  background-color: blue;
+  background-color:red;
   padding: 3em 0;
 }
 
 .preamble::after, .explanation::after {
   content: "";
-  background-color: red;
+  background-color: orange;
   height: 300px;
   display: block;
 }
@@ -176,6 +176,7 @@ footer {
 
   .preamble, .explanation, .participation, .requirements {
     background-color: orange;
+    background-image: url($photo-1-lg);
   }
 }
 /* -------------------------------- 
