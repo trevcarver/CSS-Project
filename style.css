@@ -70,7 +70,7 @@ footer {
 }
 
 .summary, .benefits, .sidebar .wrapper {
-  background-color: orange;
+  background-color: blue;
   padding: 3em 0;
 }
 
@@ -127,7 +127,8 @@ footer {
   }
 
   .preamble, .explanation, .participation, .requirements {
-    background-color: orange;
+    background-color: red;
+    background-image: url("$_photo1-lg");
   }
 }
 @media only screen and (min-width: 1024px) {
