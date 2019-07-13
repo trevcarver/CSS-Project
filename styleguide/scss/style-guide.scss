@@ -13,8 +13,8 @@ $color-5: #ffffff; // white
 
 // additional colors
 
-$success: #6fce72; // green
-$alert: $color-3; // red
+// $success: #6fce72; // green
+// $alert: $color-3; // red
 
 // fonts
 $primary-font: 'Viga', sans-serif;
@@ -49,5 +49,5 @@ $photo-10: url('..\images\weight.plate2.jpg');
 @import 'partials/typography';
 @import 'partials/icons';
 @import 'partials/page-title';
-@import 'partials/form';
-@import 'partials/buttons';
+// @import 'partials/form';
+// @import 'partials/buttons';
