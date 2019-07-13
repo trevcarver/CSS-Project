@@ -99,7 +99,6 @@ footer {
 @include MQ(L) {
   .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper{
     @include desktoplayout;
-    border: solid black 1px;
   }
 
   .intro, .supporting, .sidebar {
@@ -150,7 +149,6 @@ footer {
 @include MQ(M) {
   .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper{
     @include desktoplayout;
-    border: solid black 1px;
   }
 
   .intro, .supporting, .sidebar {
