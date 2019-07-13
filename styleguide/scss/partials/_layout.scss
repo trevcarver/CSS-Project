@@ -83,15 +83,15 @@ footer {
 }
 
 .summary, .benefits, .sidebar .wrapper {
-  background-color: orange;
-  background-image: $photo-1;
+  background-color: blue;
+  background-image: '$photo-1';
   padding: 3em 0;
 }
 
 .preamble::after, .explanation::after {
   content: '';
-  background-image: $photo-1;
-  background-color: orange;
+  background-image: "$photo-1";
+  background-color: blue;
 
   
   height: 300px;
@@ -147,7 +147,7 @@ footer {
   //placeholders
   .preamble, .explanation, .participation, .requirements {
     background-color: orange;
-    background-image: $photo-1-lg;
+    background-image: "$photo-1-lg";
   }
 }
 
@@ -198,7 +198,7 @@ footer {
   //placeholders
   .preamble, .explanation, .participation, .requirements {
     background-color: orange;
-    background-image: $photo-2-lg;
+    background-image: "$photo-2-lg";
   }
 
 
