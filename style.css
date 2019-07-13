@@ -1,18 +1,485 @@
-/* Error: Undefined variable.
- *    ,
- * 87 |   background-image: url($photo-1);
- *    |                         ^^^^^^^^
- *    '
- *   partials\_layout.scss 87:25  @import
- *   style-guide.scss 3:9         root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 87 \2502    background-image: url($photo-1);\d\a    \2502                          ^^^^^^^^\a    \2575 \a   partials\\_layout.scss 87:25  @import\a   style-guide.scss 3:9         root stylesheet";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Bungee+Inline|Fugaz+One|Major+Mono+Display|Monoton|Ultra|Viga&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+header, .summary, .preamble, .explanation, .participation, .benefits, .requirements, .sidebar .wrapper {
+  width: 100%;
+}
+header > *, .summary > *, .preamble > *, .explanation > *, .participation > *, .benefits > *, .requirements > *, .sidebar .wrapper > * {
+  padding: 2.5% 10%;
+}
+
+footer {
+  padding: 0 25%;
+}
+
+.summary, .benefits, .sidebar .wrapper {
+  background-color: orange;
+  background-image: url("/images/basketball.hoop.jpg");
+  padding: 3em 0;
+}
+
+.preamble::after, .explanation::after {
+  content: "";
+  background-image: url("/images/basketball.hoop.jpg");
+  background-color: orange;
+  height: 300px;
+  display: block;
+}
+
+@media only screen and (min-width: 1600px) {
+  .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  .intro, .supporting, .sidebar {
+    grid-column: 1/-1;
+  }
+
+  .explanation, .requirements {
+    grid-column: 1/-1;
+    width: 100%;
+  }
+  .explanation > *, .requirements > * {
+    grid-column: 4/-2;
+  }
+
+  .preamble, .participation {
+    grid-column: 1/-1;
+    width: 100%;
+  }
+  .preamble > *, .participation > * {
+    grid-column: 2/-4;
+  }
+
+  .sidebar .wrapper {
+    grid-column: 1/-1;
+    width: 100%;
+  }
+  .sidebar .wrapper > * {
+    grid-column: 3/-3;
+  }
+
+  .summary, .benefits, .sidebar .wrapper {
+    background: none;
+    padding: 3em 0;
+  }
+
+  .preamble::after, .explanation::after {
+    content: "";
+    background: none;
+  }
+
+  .preamble, .explanation, .participation, .requirements {
+    background-color: orange;
+    background-image: url("/images/basketball.hoop.lg.jpg");
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  .intro, .supporting, .sidebar {
+    grid-column: 1/-1;
+  }
+
+  .explanation, .requirements {
+    grid-column: 1/-1;
+    width: 100%;
+  }
+  .explanation > *, .requirements > * {
+    grid-column: 4/-2;
+  }
+
+  .preamble, .participation {
+    grid-column: 1/-1;
+    width: 100%;
+  }
+  .preamble > *, .participation > * {
+    grid-column: 2/-4;
+  }
+
+  .sidebar .wrapper {
+    grid-column: 1/-1;
+    width: 100%;
+  }
+  .sidebar .wrapper > * {
+    grid-column: 3/-3;
+  }
+
+  .summary, .benefits, .sidebar .wrapper {
+    background: none;
+    padding: 3em 0;
+  }
+
+  .preamble::after, .explanation::after {
+    content: "";
+    background: none;
+  }
+
+  .preamble, .explanation, .participation, .requirements {
+    background-color: orange;
+    background-image: url("/images/basketball.hoop.lg.jpg");
+  }
+}
+/* -------------------------------- 
+
+xBasic style
+
+-------------------------------- */
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Viga", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+header nav {
+  display: inline-block;
+}
+
+main {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+main > h1 {
+  text-align: center;
+  margin: 3em 0;
+}
+@media only screen and (min-width: 1024px) {
+  main {
+    padding-top: 80px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  main {
+    max-width: none;
+    padding: 120px 0 50px;
+  }
+  main > h1 {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    height: 80px;
+    line-height: 80px;
+    width: 400px;
+    margin: 0 0 0 -200px;
+    font-size: 2.6rem;
+    z-index: 20;
+  }
+}
+
+/* xBranding section - basic style */
+/* xColor section - basic style */
+/* xTypography section - basic style */
+/* xIcons section - basic style */
+/* xForm section - basic style */
+@-moz-document url-prefix() {
+  /* hide custom arrow on Firefox */
+  .cd-select::after {
+    display: none;
+  }
+}
+/* -------------------------------- 
+
+xBackground 
+
+-------------------------------- */
+body {
+  /* this is the page background */
+  background-color: #ffffff;
+}
+
+/* -------------------------------- 
+
+xNavigation 
+
+-------------------------------- */
+.cd-logo {
+  /* logo box style */
+  background-color: #302746;
+  width: 120px;
+}
+@media only screen and (min-width: 1024px) {
+  .cd-logo {
+    width: 180px;
+  }
+}
+
+.cd-main-nav {
+  /* main navigation background color - full screen on small devices */
+  background: #233541;
+}
+.cd-main-nav li a {
+  color: #ffffff;
+  border-color: #2c4352;
+}
+@media only screen and (min-width: 1024px) {
+  .cd-main-nav li a {
+    color: #799eb7;
+  }
+  .cd-main-nav li a.selected {
+    color: #ffffff;
+    box-shadow: 0 2px 0 #302746;
+  }
+  .cd-main-nav li a:hover {
+    color: #ffffff;
+  }
+}
+
+.cd-nav-trigger span {
+  /* hamburger menu */
+  background-color: #ffffff;
+}
+.cd-nav-trigger span::before, .cd-nav-trigger span::after {
+  /* upper and lower lines */
+  background-color: #ffffff;
+}
+
+.nav-is-visible .cd-nav-trigger span {
+  /* hide line in the center on mobile when nav is visible */
+  background-color: rgba(255, 255, 255, 0);
+}
+.nav-is-visible .cd-nav-trigger span::before, .nav-is-visible .cd-nav-trigger span::after {
+  /* preserve visibility of upper and lower lines - close icon */
+  background-color: white;
+}
+
+.cd-download {
+  /* download button top-right visible on big devices */
+  background-color: #355062;
+}
+.no-touch .cd-download:hover {
+  background-color: #3e5e73;
+}
+.cd-download span {
+  /* tooltip */
+  background: #302746;
+  color: #ffffff;
+}
+.cd-download span::before {
+  /* right arrow color */
+  border-color: #302746;
+}
+
+.cd-primary-nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background-color: #302746;
+  text-align: center;
+}
+.cd-primary-nav ul li {
+  width: 10%;
+}
+.cd-primary-nav ul li a {
+  display: block;
+  color: #ffffff;
+}
+
+.cd-secondary-nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+.cd-secondary-nav ul li {
+  width: 12.5%;
+}
+.cd-secondary-nav ul li a {
+  display: block;
+  color: #4C2742;
+}
+
+/* -------------------------------- 
+
+xPatterns
+
+-------------------------------- */
+.cd-box {
+  /* this is the container of various design elements - i.e. the 2 logo of the branding section */
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  background: #ffffff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  padding: 6px;
+}
+
+/* -------------------------------- 
+
+xTypography 
+
+-------------------------------- */
+h1,
+h2, h3 {
+  font-family: "Ultra", serif;
+  color: #233541;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0 0 0.4em;
+}
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 1em 0;
+}
+@media only screen and (min-width: 768px) {
+  h2 {
+    font-size: 1.8rem;
+    margin: 1em 0 1.4em;
+  }
+}
+
+h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 1em 0;
+}
+@media only screen and (min-width: 768px) {
+  h3 {
+    font-size: 1.4rem;
+    margin: 1em 0 1em;
+  }
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: #507994;
+}
+p a {
+  color: #302746;
+  text-decoration: underline;
+}
+@media only screen and (min-width: 768px) {
+  p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+}
+
+/* -------------------------------- 
+
+xIcons 
+
+-------------------------------- */
+.cd-icons li {
+  /* icons size */
+  width: 32px;
+  height: 32px;
+}
+
+/* -------------------------------- 
+
+xPage title 
+
+-------------------------------- */
+main > h1 {
+  color: #233541;
+}
+@media only screen and (min-width: 1600px) {
+  main > h1 {
+    /* title goes into the header on big devices */
+    color: #ffffff;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

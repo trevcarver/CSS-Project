@@ -84,13 +84,13 @@ footer {
 
 .summary, .benefits, .sidebar .wrapper {
   background-color: orange;
-  background-image: url($photo-1);
+  background-image: url('/images/basketball.hoop.jpg');
   padding: 3em 0;
 }
 
 .preamble::after, .explanation::after {
   content: '';
-  background-image: url($photo-1);
+  background-image: url('/images/basketball.hoop.jpg');
   background-color: orange;
 
   
@@ -147,7 +147,7 @@ footer {
   //placeholders
   .preamble, .explanation, .participation, .requirements {
     background-color: orange;
-    background-image: url($photo-1-lg);
+    background-image: url('/images/basketball.hoop.lg.jpg');
   }
 }
 
@@ -198,7 +198,8 @@ footer {
   //placeholders
   .preamble, .explanation, .participation, .requirements {
     background-color: orange;
-    background-image: url($photo-1-lg);
+    background-image: url('/images/basketball.hoop.lg.jpg');
+    background-size: cover;
   }
 
 
