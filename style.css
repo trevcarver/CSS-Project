@@ -85,7 +85,6 @@ footer {
   .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    border: solid black 1px;
   }
 
   .intro, .supporting, .sidebar {
@@ -134,7 +133,6 @@ footer {
   .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    border: solid black 1px;
   }
 
   .intro, .supporting, .sidebar {
@@ -177,6 +175,87 @@ footer {
 
   .preamble, .explanation, .participation, .requirements {
     background-color: orange;
+  }
+}
+/* -------------------------------- 
+
+xBasic style
+
+-------------------------------- */
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Viga", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+header nav {
+  display: inline-block;
+}
+
+main {
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+main > h1 {
+  text-align: center;
+  margin: 3em 0;
+}
+@media only screen and (min-width: 1024px) {
+  main {
+    padding-top: 80px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  main {
+    max-width: none;
+    padding: 120px 0 50px;
+  }
+  main > h1 {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    height: 80px;
+    line-height: 80px;
+    width: 400px;
+    margin: 0 0 0 -200px;
+    font-size: 2.6rem;
+    z-index: 20;
+  }
+}
+
+/* xBranding section - basic style */
+/* xColor section - basic style */
+/* xTypography section - basic style */
+/* xIcons section - basic style */
+/* xForm section - basic style */
+@-moz-document url-prefix() {
+  /* hide custom arrow on Firefox */
+  .cd-select::after {
+    display: none;
   }
 }
 /* -------------------------------- 
@@ -311,7 +390,7 @@ xTypography
 
 -------------------------------- */
 h1,
-h2 {
+h2, h3 {
   font-family: "Ultra", serif;
   color: #233541;
 }
@@ -345,9 +424,16 @@ h2 {
   }
 }
 
-section > h2::before {
-  /* number before each section title */
-  color: silver;
+h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 1em 0;
+}
+@media only screen and (min-width: 768px) {
+  h3 {
+    font-size: 1.4rem;
+    margin: 1em 0 1em;
+  }
 }
 
 p {

@@ -40,10 +40,10 @@ header {
 		display: inline-block;
 	}
 
-	@include MQ(M) {
-		height: 80px;
-		@include clearfix;
-	}
+	// @include MQ(M) {
+	// 	height: 80px;
+	// 	@include clearfix;
+	// }
 }
 
 // .cd-logo {

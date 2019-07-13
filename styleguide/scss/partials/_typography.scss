@@ -5,7 +5,7 @@ xTypography
 -------------------------------- */
 
 h1,
-h2 {
+h2, h3 {
   font-family: $secondary-font;
   color: $color-2;
 }
@@ -36,10 +36,21 @@ h2 {
   }
 }
 
-section > h2::before {
-  /* number before each section title */
-  color: darken($color-4, 15%);
+h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 1em 0;
+  
+  @include MQ(S) {
+    font-size: 1.4rem;
+    margin: 1em 0 1em;
+  }
 }
+
+// section > h2::before {
+//   /* number before each section title */
+//   color: darken($color-4, 15%);
+// }
 
 p {
   font-size: 1.4rem;
