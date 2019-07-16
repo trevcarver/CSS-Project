@@ -69,18 +69,82 @@ footer {
   padding: 0 25%;
 }
 
+header {
+  background-color: #233541;
+}
+header h1 {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: url("/images/store.nike.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #e6e6e6;
+}
+header h2 {
+  color: #e6e6e6;
+}
+
 .summary, .benefits, .sidebar .wrapper {
+<<<<<<< HEAD
   background-color:red;
   
   
+=======
+  background-color: orange;
+>>>>>>> 890bfb98bff118c4a31682c7a5021d7522a9e964
   padding: 3em 0;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 3em 0;
 }
 
 .preamble::after, .explanation::after {
   content: "";
   background-color: orange;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 300px;
   display: block;
+  margin: 3em 0;
+}
+
+.summary {
+  background-image: url("/images/basketball.hoop.jpg");
+}
+
+.benefits {
+  background-image: url("/images/battle.ropes.jpg");
+}
+
+.sidebar .wrapper {
+  background-image: url("/images/blue.nike.jpg");
+}
+
+.preamble::after {
+  background-image: url("/images/gray.nike.jpg");
+}
+
+.explanation::after {
+  background-image: url("/images/orange.nike.jpg");
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+footer a {
+  margin: 1em;
+}
+
+.sidebar .wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (min-width: 1600px) {
@@ -122,14 +186,48 @@ footer {
     padding: 3em 0;
   }
 
-  .preamble::after, .explanation::after {
-    content: "";
-    background: none;
+  .preamble, .explanation, .participation, .requirements {
+    background-color: orange;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3em 0;
+    margin: 3em 0;
   }
 
-  .preamble, .explanation, .participation, .requirements {
-    background-color: red;
-    background-image: url("$_photo1-lg");
+  .preamble::after, .explanation::after {
+    content: "";
+    display: none;
+  }
+
+  .preamble {
+    background-image: url("/images/basketball.hoop.jpg");
+  }
+
+  .explanation {
+    background-image: url("/images/battle.ropes.jpg");
+  }
+
+  .participation {
+    background-image: url("/images/blue.nike.jpg");
+  }
+
+  .requirements {
+    background-image: url("/images/gray.nike.jpg");
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+  footer a {
+    margin: 1em;
+  }
+
+  .sidebar .wrapper {
+    display: flex;
+    flex-direction: row;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -171,14 +269,48 @@ footer {
     padding: 3em 0;
   }
 
-  .preamble::after, .explanation::after {
-    content: "";
-    background: none;
-  }
-
   .preamble, .explanation, .participation, .requirements {
     background-color: orange;
-    background-image: url($photo-1-lg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3em 0;
+    margin: 3em 0;
+  }
+
+  .preamble::after, .explanation::after {
+    content: "";
+    display: none;
+  }
+
+  .preamble {
+    background-image: url("/images/basketball.hoop.jpg");
+  }
+
+  .explanation {
+    background-image: url("/images/battle.ropes.jpg");
+  }
+
+  .participation {
+    background-image: url("/images/blue.nike.jpg");
+  }
+
+  .requirements {
+    background-image: url("/images/gray.nike.jpg");
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+  footer a {
+    margin: 1em;
+  }
+
+  .sidebar .wrapper {
+    display: flex;
+    flex-direction: row;
   }
 }
 /* -------------------------------- 
@@ -400,19 +532,24 @@ h2, h3 {
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 4rem;
   font-weight: 300;
   line-height: 1.2;
   margin: 0 0 0.4em;
 }
 @media only screen and (min-width: 768px) {
   h1 {
-    font-size: 3.2rem;
+    font-size: 6rem;
   }
 }
 @media only screen and (min-width: 1024px) {
   h1 {
-    font-size: 4rem;
+    font-size: 12rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  h1 {
+    font-size: 12rem;
   }
 }
 
@@ -420,6 +557,7 @@ h2 {
   font-weight: bold;
   text-transform: uppercase;
   margin: 1em 0;
+  color: #fefefe;
 }
 @media only screen and (min-width: 768px) {
   h2 {
@@ -480,190 +618,6 @@ main > h1 {
     /* title goes into the header on big devices */
     color: #ffffff;
   }
-}
-
-/* -------------------------------- 
-
-xForm 
-
--------------------------------- */
-input[type=text],
-select {
-  border: 1px solid #e6e6e6;
-  border-radius: 0.25em;
-  background: #ffffff;
-}
-input[type=text]:focus,
-select:focus {
-  outline: none;
-}
-
-input[type=text] {
-  padding: 0.6em 1em;
-  box-shadow: inset 1px 1px rgba(0, 0, 0, 0.03);
-}
-input[type=text].success {
-  border-color: #6fce72;
-  box-shadow: 0 0 6px rgba(111, 206, 114, 0.2);
-}
-input[type=text].alert {
-  border-color: #4C2742;
-  box-shadow: 0 0 6px rgba(76, 39, 66, 0.2);
-}
-input[type=text]:focus {
-  border-color: #302746;
-  box-shadow: 0 0 6px rgba(48, 39, 70, 0.2);
-}
-
-input[type=radio],
-input[type=checkbox] {
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin: 0;
-  padding: 0;
-  opacity: 0;
-}
-
-.radio-label,
-.checkbox-label {
-  padding-left: 24px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.radio-label::before, .radio-label::after,
-.checkbox-label::before,
-.checkbox-label::after {
-  /* custom radio and check boxes */
-  content: "";
-  display: block;
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-.radio-label::before,
-.checkbox-label::before {
-  left: 0;
-  border: 1px solid #e6e6e6;
-  box-shadow: inset 1px 1px rgba(0, 0, 0, 0.03);
-}
-.radio-label::after,
-.checkbox-label::after {
-  left: 3px;
-  background: url("../assets/form/icon-check.svg") no-repeat center center;
-  display: none;
-}
-
-.radio-label::before {
-  border-radius: 50%;
-}
-
-.checkbox-label::before {
-  border-radius: 3px;
-}
-
-input[type=radio]:checked + label::before,
-input[type=checkbox]:checked + label::before {
-  background-color: #233541;
-  border: none;
-  box-shadow: none;
-}
-
-input[type=radio]:checked + label::after,
-input[type=checkbox]:checked + label::after {
-  display: block;
-}
-
-.cd-select::after {
-  /* switcher arrow for select element */
-  content: "";
-  position: absolute;
-  z-index: 1;
-  right: 14px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  display: block;
-  width: 16px;
-  height: 16px;
-  background: url("../assets/form/icon-select.svg") no-repeat center center;
-  pointer-events: none;
-}
-
-select {
-  position: relative;
-  padding: 0.6em 2em 0.6em 1em;
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-}
-
-/* -------------------------------- 
-
-xButtons 
-
--------------------------------- */
-.btn {
-  border: none;
-  box-shadow: none;
-  border-radius: 0.25em;
-  font-size: 1.4rem;
-  font-family: "Ultra", serif;
-  color: #ffffff;
-  padding: 0.6em 2.2em;
-  cursor: pointer;
-  background: #302746;
-}
-.btn:focus {
-  outline: none;
-}
-.no-touch .btn:hover {
-  background: #3b3056;
-}
-.btn.btn-success {
-  background: #6fce72;
-}
-.no-touch .btn.btn-success:hover {
-  background: #82d485;
-}
-.btn.btn-alert {
-  background: #4C2742;
-}
-.no-touch .btn.btn-alert:hover {
-  background: #5d3051;
-}
-.btn.btn-outline {
-  color: #302746;
-  background: transparent;
-  box-shadow: inset 0 0 0 1px #302746;
-}
-.no-touch .btn.btn-outline:hover {
-  color: #ffffff;
-  background: #302746;
-}
-@media only screen and (min-width: 768px) {
-  .btn {
-    font-size: 1.6rem;
-  }
-}
-
-.cd-buttons .cd-box:nth-of-type(2) span {
-  /* CSS class name color */
-  color: #302746;
 }
 
 /*# sourceMappingURL=style.css.map */
