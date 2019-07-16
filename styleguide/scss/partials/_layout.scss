@@ -85,13 +85,19 @@ footer {
 .summary, .benefits, .sidebar .wrapper {
   background-color: orange;
   padding: 3em 0;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .preamble::after, .explanation::after {
   content: '';
   background-color: orange;
-
-  
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 300px;
   display: block;
 }
