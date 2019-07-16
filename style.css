@@ -69,6 +69,22 @@ footer {
   padding: 0 25%;
 }
 
+header {
+  background-color: #233541;
+}
+header h1 {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-image: url("/images/weight.plate2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #e6e6e6;
+}
+header h2 {
+  color: #e6e6e6;
+}
+
 .summary, .benefits, .sidebar .wrapper {
   background-color: orange;
   padding: 3em 0;
@@ -76,6 +92,7 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 3em 0;
 }
 
 .preamble::after, .explanation::after {
@@ -87,6 +104,7 @@ footer {
   background-size: cover;
   height: 300px;
   display: block;
+  margin: 3em 0;
 }
 
 .summary {
@@ -107,6 +125,19 @@ footer {
 
 .explanation::after {
   background-image: url("/images/orange.nike.jpg");
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+footer a {
+  margin: 1em;
+}
+
+.sidebar .wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (min-width: 1600px) {
@@ -148,13 +179,19 @@ footer {
     padding: 3em 0;
   }
 
-  .preamble::after, .explanation::after {
-    content: "";
-    background: none;
-  }
-
   .preamble, .explanation, .participation, .requirements {
     background-color: orange;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3em 0;
+    margin: 3em 0;
+  }
+
+  .preamble::after, .explanation::after {
+    content: "";
+    display: none;
   }
 
   .preamble {
@@ -171,6 +208,19 @@ footer {
 
   .requirements {
     background-image: url("/images/gray.nike.jpg");
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+  footer a {
+    margin: 1em;
+  }
+
+  .sidebar .wrapper {
+    display: flex;
+    flex-direction: row;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -212,14 +262,19 @@ footer {
     padding: 3em 0;
   }
 
-  .preamble::after, .explanation::after {
-    content: "";
-    background: none;
-  }
-
   .preamble, .explanation, .participation, .requirements {
     background-color: orange;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
+    padding: 3em 0;
+    margin: 3em 0;
+  }
+
+  .preamble::after, .explanation::after {
+    content: "";
+    display: none;
   }
 
   .preamble {
@@ -236,6 +291,19 @@ footer {
 
   .requirements {
     background-image: url("/images/gray.nike.jpg");
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+  footer a {
+    margin: 1em;
+  }
+
+  .sidebar .wrapper {
+    display: flex;
+    flex-direction: row;
   }
 }
 /* -------------------------------- 
@@ -457,19 +525,24 @@ h2, h3 {
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 4rem;
   font-weight: 300;
   line-height: 1.2;
   margin: 0 0 0.4em;
 }
 @media only screen and (min-width: 768px) {
   h1 {
-    font-size: 3.2rem;
+    font-size: 6rem;
   }
 }
 @media only screen and (min-width: 1024px) {
   h1 {
-    font-size: 4rem;
+    font-size: 12rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  h1 {
+    font-size: 12rem;
   }
 }
 
@@ -477,6 +550,7 @@ h2 {
   font-weight: bold;
   text-transform: uppercase;
   margin: 1em 0;
+  color: #fefefe;
 }
 @media only screen and (min-width: 768px) {
   h2 {

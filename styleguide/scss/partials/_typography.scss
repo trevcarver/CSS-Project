@@ -11,17 +11,20 @@ h2, h3 {
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 4rem;
   font-weight: 300;
   line-height: 1.2;
   margin: 0 0 0.4em;
 
   @include MQ(S) {
-    font-size: 3.2rem;
+    font-size: 6rem;
   }
 
   @include MQ(M) {
-    font-size: 4rem;
+    font-size: 12rem;
+  }
+  @include MQ(L) {
+    font-size: 12rem;
   }
 }
 
@@ -29,6 +32,7 @@ h2 {
   font-weight: bold;
   text-transform: uppercase;
   margin: 1em 0;
+  color: lighten($color-2, 80%);
 
   @include MQ(S) {
     font-size: 1.8rem;
