@@ -5,7 +5,21 @@ xIcons
 -------------------------------- */
 
 .cd-icons li {
-  /* icons size */
-  width: 32px;
-  height: 32px;
+    /* icons size */
+    width: 32px;
+    height: 32px;
+}
+
+#zen-intro {
+    &header {
+        & h1::before {
+            content: '';
+            background-image: url(../../assets/icons/svg/dumbell.svg);
+            background-size: 32px 32px;
+            display: block;
+            width: 32px;
+            height: 32px;
+            color: #233541;
+        }
+    }
 }

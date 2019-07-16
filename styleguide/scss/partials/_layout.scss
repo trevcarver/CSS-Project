@@ -100,6 +100,8 @@ header {
 }
 
 .summary, .benefits, .sidebar .wrapper {
+  background-color: blue;
+  background-image: '$photo-1';
   background-color: orange;
   padding: 3em 0;
   background-attachment: fixed;
@@ -111,11 +113,15 @@ header {
 
 .preamble::after, .explanation::after {
   content: '';
+
+  background-image: "$photo-1";
+  background-color: blue;
   background-color: orange;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
   height: 300px;
   display: block;
   margin: 3em 0;
@@ -219,6 +225,7 @@ footer {
   //placeholders
   .preamble, .explanation, .participation, .requirements {
     background-color: orange;
+    background-image: "$photo-1-lg";
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -243,6 +250,7 @@ footer {
 
   .participation {
     background-image: url('/images/blue.nike.jpg');
+
   }
 
   .requirements {
@@ -313,6 +321,7 @@ footer {
   //placeholders
   .preamble, .explanation, .participation, .requirements {
     background-color: orange;
+    background-image: "$photo-2-lg";
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
