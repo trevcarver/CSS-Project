@@ -88,7 +88,7 @@ header {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    background-image: url('/images/store.nike.jpg');
+    background-image: url('/CSS-Project/images/store.nike.lg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -130,23 +130,23 @@ header {
 
 // images
 .summary {
-  background-image: url('/images/basketball.hoop.jpg');
+  background-image: url('/CSS-Project/images/basketball.hoop.lg.jpg');
 }
 
 .benefits {
-  background-image: url('/images/battle.ropes.jpg');
+  background-image: url('/CSS-Project/images/battle.ropes.lg.jpg');
 }
 
 .sidebar .wrapper {
-  background-image: url('/images/blue.nike.jpg');
+  background-image: url('/CSS-Project/images/blue.nike.lg.jpg');
 }
 
 .preamble::after {
-  background-image: url('/images/gray.nike.jpg');
+  background-image: url('/CSS-Project/images/gray.nike.lg.jpg');
 }
 
 .explanation::after {
-  background-image: url('/images/orange.nike.jpg');
+  background-image: url('/CSS-Project/images/orange.nike.lg.jpg');
 }
 
 
@@ -229,20 +229,24 @@ footer {
 
   // images
   .preamble {
-    background-image: url('/images/basketball.hoop.jpg');
+    background-image: url('/CSS-Project/images/basketball.hoop.lg.jpg');
+    opacity: .4;
   }
 
   .explanation {
-    background-image: url('/images/battle.ropes.jpg');
+    background-image: url('/CSS-Project/images/orange.nike.lg.jpg');
+    opacity: .4;
   }
 
   .participation {
-    background-image: url('/images/blue.nike.jpg');
+    background-image: url('/CSS-Project/images/blue.nike.lg.jpg');
+    opacity: .4;
 
   }
 
   .requirements {
-    background-image: url('/images/gray.nike.jpg');
+    background-image: url('/CSS-Project/images/gray.nike.lg.jpg');
+    opacity: .4;
   }
 
   //footer styles
@@ -325,19 +329,23 @@ footer {
 
   // images
   .preamble {
-    background-image: url('/images/basketball.hoop.jpg');
+    background-image: url('/CSS-Project/images/basketball.hoop.lg.jpg');
+    opacity: .4;
   }
 
   .explanation {
-    background-image: url('/images/battle.ropes.jpg');
+    background-image: url('/CSS-Project/images/orange.nike.lg.jpg');
+    opacity: .4;
   }
 
   .participation {
-    background-image: url('/images/blue.nike.jpg');
+    background-image: url('/CSS-Project/images/blue.nike.lg.jpg');
+    opacity: .4;
   }
 
   .requirements {
-    background-image: url('/images/gray.nike.jpg');
+    background-image: url('/CSS-Project/images/gray.nike.lg.jpg');
+    opacity: .4;
   }
 
   //footer styles
