@@ -87,10 +87,11 @@ header {
   h1 {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    background-image: url('/images/weight.plate2.jpg');
+    background-clip: text;
+    background-image: url('/images/store.nike.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    background-position: center;
     color: #e6e6e6;
   }
   h2 {
