@@ -88,7 +88,7 @@ header {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    background-image: url('/CSS-Project/images/store.nike.lg.jpg');
+    background-image: url('/images/store.nike.lg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -130,23 +130,24 @@ header {
 
 // images
 .summary {
-  background-image: url('/CSS-Project/images/basketball.hoop.lg.jpg');
+  background-image: url('/images/basketball.hoop.lg.jpg');
+  background-color: red;
 }
 
 .benefits {
-  background-image: url('/CSS-Project/images/battle.ropes.lg.jpg');
+  background-image: url('/images/battle.ropes.lg.jpg');
 }
 
 .sidebar .wrapper {
-  background-image: url('/CSS-Project/images/blue.nike.lg.jpg');
+  background-image: url('/images/blue.nike.lg.jpg');
 }
 
 .preamble::after {
-  background-image: url('/CSS-Project/images/gray.nike.lg.jpg');
+  background-image: url('/images/gray.nike.lg.jpg');
 }
 
 .explanation::after {
-  background-image: url('/CSS-Project/images/orange.nike.lg.jpg');
+  background-image: url('/images/orange.nike.lg.jpg');
 }
 
 
@@ -158,7 +159,7 @@ footer {
     text-align: center;
     &::after {
       content: '';
-      background-image: url(/images/runner.jpg);
+      background-image: url('/images/runner.jpg');
       width: 4em;
       height: 4em;
       display: block;
@@ -241,24 +242,22 @@ footer {
 
   // images
   .preamble {
-    background-image: url('/CSS-Project/images/basketball.hoop.lg.jpg');
-    opacity: .4;
+    background-image: url('/images/basketball.hoop.lg.jpg');
   }
 
   .explanation {
-    background-image: url('/CSS-Project/images/orange.nike.lg.jpg');
-    opacity: .4;
+    background-image: url('/images/orange.nike.lg.jpg');
   }
 
   .participation {
-    background-image: url('/CSS-Project/images/blue.nike.lg.jpg');
-    opacity: .4;
+    background-image: url('/images/blue.nike.lg.jpg');
+    
 
   }
 
   .requirements {
-    background-image: url('/CSS-Project/images/gray.nike.lg.jpg');
-    opacity: .4;
+    background-image: url('/images/gray.nike.lg.jpg');
+    
   }
 
   //footer styles
@@ -341,23 +340,23 @@ footer {
 
   // images
   .preamble {
-    background-image: url('/CSS-Project/images/basketball.hoop.lg.jpg');
-    opacity: .4;
+    background-image: url('/images/basketball.hoop.lg.jpg');
+    
   }
 
   .explanation {
-    background-image: url('/CSS-Project/images/orange.nike.lg.jpg');
-    opacity: .4;
+    background-image: url('/images/orange.nike.lg.jpg');
+    
   }
 
   .participation {
-    background-image: url('/CSS-Project/images/blue.nike.lg.jpg');
-    opacity: .4;
+    background-image: url('/images/blue.nike.lg.jpg');
+    
   }
 
   .requirements {
     background-image: url('/CSS-Project/images/gray.nike.lg.jpg');
-    opacity: .4;
+    
   }
 
   //footer styles
