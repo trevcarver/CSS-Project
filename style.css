@@ -133,7 +133,17 @@ footer {
   justify-content: center;
 }
 footer a {
+  text-align: center;
   margin: 1em;
+}
+footer a::after {
+  content: "";
+  background-image: url(/images/runner.jpg);
+  width: 4em;
+  height: 4em;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .sidebar .wrapper {
