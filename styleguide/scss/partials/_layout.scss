@@ -82,20 +82,86 @@ footer {
   @include smalltext;
 }
 
+header {
+  background-color: #233541;
+  h1 {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: url('/images/store.nike.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #e6e6e6;
+  }
+  h2 {
+    color: #e6e6e6;
+  }
+}
+
 .summary, .benefits, .sidebar .wrapper {
   background-color: blue;
   background-image: '$photo-1';
+  background-color: orange;
   padding: 3em 0;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 3em 0;
 }
 
 .preamble::after, .explanation::after {
   content: '';
+
   background-image: "$photo-1";
   background-color: blue;
+  background-color: orange;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-  
   height: 300px;
   display: block;
+  margin: 3em 0;
+}
+
+
+// images
+.summary {
+  background-image: url('/images/basketball.hoop.jpg');
+}
+
+.benefits {
+  background-image: url('/images/battle.ropes.jpg');
+}
+
+.sidebar .wrapper {
+  background-image: url('/images/blue.nike.jpg');
+}
+
+.preamble::after {
+  background-image: url('/images/gray.nike.jpg');
+}
+
+.explanation::after {
+  background-image: url('/images/orange.nike.jpg');
+}
+
+
+//footer styles
+footer {
+  display: flex;
+  justify-content: center;
+  a {
+    margin: 1em;
+  }
+}
+
+.sidebar .wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 // desktop layout
@@ -139,16 +205,61 @@ footer {
     padding: 3em 0;
   }
   
-  .preamble::after, .explanation::after {
-    content: '';
-    background: none;
-  }
+  // .preamble::after, .explanation::after {
+  //   content: '';
+  //   background: none;
+  // }
   
   //placeholders
   .preamble, .explanation, .participation, .requirements {
     background-color: orange;
     background-image: "$photo-1-lg";
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3em 0;
+    margin: 3em 0;
   }
+
+  .preamble::after, .explanation::after {
+    content: '';
+    display: none;
+  }
+
+  // images
+  .preamble {
+    background-image: url('/images/basketball.hoop.jpg');
+  }
+
+  .explanation {
+    background-image: url('/images/battle.ropes.jpg');
+  }
+
+  .participation {
+    background-image: url('/images/blue.nike.jpg');
+
+  }
+
+  .requirements {
+    background-image: url('/images/gray.nike.jpg');
+  }
+
+  //footer styles
+
+  footer {
+    display: flex;
+    justify-content: center;
+    a {
+      margin: 1em;
+    }
+  }
+
+  .sidebar .wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
 }
 
 @include MQ(M) {
@@ -190,15 +301,58 @@ footer {
     padding: 3em 0;
   }
   
-  .preamble::after, .explanation::after {
-    content: '';
-    background: none;
-  }
+  // .preamble::after, .explanation::after {
+  //   content: '';
+  //   background: none;
+  // }
   
   //placeholders
   .preamble, .explanation, .participation, .requirements {
     background-color: orange;
     background-image: "$photo-2-lg";
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3em 0;
+    margin: 3em 0;
+  }
+
+  .preamble::after, .explanation::after {
+    content: '';
+    display: none;
+  }
+
+  // images
+  .preamble {
+    background-image: url('/images/basketball.hoop.jpg');
+  }
+
+  .explanation {
+    background-image: url('/images/battle.ropes.jpg');
+  }
+
+  .participation {
+    background-image: url('/images/blue.nike.jpg');
+  }
+
+  .requirements {
+    background-image: url('/images/gray.nike.jpg');
+  }
+
+  //footer styles
+
+  footer {
+    display: flex;
+    justify-content: center;
+    a {
+      margin: 1em;
+    }
+  }
+
+  .sidebar .wrapper {
+    display: flex;
+    flex-direction: row;
   }
 
 
