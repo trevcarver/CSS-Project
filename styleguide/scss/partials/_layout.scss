@@ -84,19 +84,40 @@ footer {
 
 .summary, .benefits, .sidebar .wrapper {
   background-color: orange;
-  background-image: url('/images/basketball.hoop.jpg');
   padding: 3em 0;
 }
 
 .preamble::after, .explanation::after {
   content: '';
-  background-image: url('/images/basketball.hoop.jpg');
   background-color: orange;
 
   
   height: 300px;
   display: block;
 }
+
+
+// images
+.summary {
+  background-image: url('/images/basketball.hoop.jpg');
+}
+
+.benefits {
+  background-image: url('/images/battle.ropes.jpg');
+}
+
+.sidebar .wrapper {
+  background-image: url('/images/blue.nike.jpg');
+}
+
+.preamble::after {
+  background-image: url('/images/gray.nike.jpg');
+}
+
+.explanation::after {
+  background-image: url('/images/orange.nike.jpg');
+}
+
 
 // desktop layout
 
@@ -147,8 +168,25 @@ footer {
   //placeholders
   .preamble, .explanation, .participation, .requirements {
     background-color: orange;
-    background-image: url('/images/basketball.hoop.lg.jpg');
   }
+
+  // images
+  .preamble {
+    background-image: url('/images/basketball.hoop.jpg');
+  }
+
+  .explanation {
+    background-image: url('/images/battle.ropes.jpg');
+  }
+
+  .participation {
+    background-image: url('/images/blue.nike.jpg');
+  }
+
+  .requirements {
+    background-image: url('/images/gray.nike.jpg');
+  }
+
 }
 
 @include MQ(M) {
@@ -198,8 +236,24 @@ footer {
   //placeholders
   .preamble, .explanation, .participation, .requirements {
     background-color: orange;
-    background-image: url('/images/basketball.hoop.lg.jpg');
     background-size: cover;
+  }
+
+  // images
+  .preamble {
+    background-image: url('/images/basketball.hoop.jpg');
+  }
+
+  .explanation {
+    background-image: url('/images/battle.ropes.jpg');
+  }
+
+  .participation {
+    background-image: url('/images/blue.nike.jpg');
+  }
+
+  .requirements {
+    background-image: url('/images/gray.nike.jpg');
   }
 
 
