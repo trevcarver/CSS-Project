@@ -11,14 +11,22 @@ h2, h3 {
 }
 
 h1 {
-  font-size: 4rem;
-  font-weight: 300;
+  font-size: 8rem;
   line-height: 1.2;
   margin: 0 0 0.4em;
+  text-transform: uppercase;
+  // -webkit-text-fill-color: transparent;
+  // -webkit-background-clip: text;
+  // background-clip: text;
+  // background-image: url('/images/');
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
+  color: #e6e6e6;
 
-  @include MQ(S) {
-    font-size: 6rem;
-  }
+  // @include MQ(S) {
+
+  // }
 
   @include MQ(M) {
     font-size: 12rem;
@@ -29,25 +37,41 @@ h1 {
 }
 
 h2 {
-  font-weight: bold;
-  text-transform: uppercase;
   margin: 1em 0;
-  color: lighten($color-2, 80%);
+  color: $color-5;
+  font-size: 3rem;
 
   @include MQ(S) {
-    font-size: 1.8rem;
+    font-size: 3.5rem;
     margin: 1em 0 1.4em;
   }
 }
 
 h3 {
-  font-weight: bold;
+  font-size: 2.6rem;
   text-transform: uppercase;
   margin: 1em 0;
+  color: $color-1;
+  text-shadow: 2px 2px $color-5;
   
   @include MQ(S) {
-    font-size: 1.4rem;
+    font-size: 2.3rem;
     margin: 1em 0 1em;
+  }
+}
+
+.benefits {
+  h3 {
+    color: $color-5;
+    text-shadow: 2px 2px $color-2;
+  }
+}
+
+a, a:visited {
+  transition: .5s;
+  color: $color-1;
+  &:hover {
+    color: $color-3;
   }
 }
 
@@ -57,17 +81,42 @@ h3 {
 // }
 
 p {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   line-height: 1.4;
-  color: lighten($color-2, 25%);
-
-  a {
-    color: $color-1;
-    text-decoration: underline;
-  }
+  color: $color-1;
+  text-shadow: 2px 2px $color-5;
 
   @include MQ(S) {
     font-size: 1.6rem;
     line-height: 1.6;
+  }
+}
+
+.summary *, .benefits p, .sidebar .wrapper *{
+  @include MQ(M) {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: $color-1;
+    text-shadow: 2px 2px $color-5;
+  }
+  font-size: 2.5rem;
+  color: $color-5;
+  text-shadow: 2px 2px $color-2;
+  a, a:visited {
+    color: darken($color-5, 15%);
+    &:hover {
+      color: $color-5;
+    }
+  }
+} 
+
+footer {
+  font-size: 2rem;
+  a, a:visited {
+    color: darken($color-5, 15%);
+    &:hover {
+      color: $color-5;
+      transform: scale(1.3);
+    }
   }
 }
