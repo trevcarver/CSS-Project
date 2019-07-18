@@ -2,27 +2,23 @@
 @import 'partials/prefix-mixins';
 @import 'partials/layout'; // responsive grid and media queries
 @import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Fugaz+One|Major+Mono+Display|Monoton|Ultra|Viga&display=swap');
-
 // color palette - these colors will be the color swatches of the Colors section
-
 $color-1: #302746; // Dark Purple
 $color-2: #233541; // Dark Cyan
 $color-3: #4C2742; // Purple
 $color-4: #e6e6e6; // light grey
 $color-5: #ffffff; // white
-
 // additional colors
-
 // $success: #6fce72; // green
 // $alert: $color-3; // red
-
 // fonts
-$primary-font: 'Viga', sans-serif;
-$secondary-font: 'Fugaz One', Helvetica, sans-serif;
-
+$primary-font: 'Viga',
+sans-serif;
+$secondary-font: 'Fugaz One',
+Helvetica,
+sans-serif;
 // photos
-
-$photo-1: url('/images/basketball.hoop.jpg'); 
+$photo-1: url('/images/basketball.hoop.jpg');
 $photo-1-lg: url('/images/basketball.hoop.lg.jpg');
 $photo-2: url('/images/battle.ropes.jpg');
 $photo-2-lg: url('/images/battle.ropes.lg.jpg');
@@ -40,10 +36,6 @@ $photo-8-lg: url('/images/store.nike.lg.jpg');
 $photo-9: url('/images/weight.plate.jpg');
 $photo-9-lg: url('/images/weight.plate.lg.jpg');
 $photo-10: url('/images/weight.plate2.jpg');
-
-
-
-
 @import 'partials/basic-style';
 @import 'partials/background';
 @import 'partials/navigation';

@@ -50,9 +50,23 @@ table {
   display: flex;
   flex-direction: column; }
 
-header, .summary, .preamble, .explanation, .participation, .benefits, .requirements, .sidebar .wrapper {
+header,
+.summary,
+.preamble,
+.explanation,
+.participation,
+.benefits,
+.requirements,
+.sidebar .wrapper {
   width: 100%; }
-  header > *, .summary > *, .preamble > *, .explanation > *, .participation > *, .benefits > *, .requirements > *, .sidebar .wrapper > * {
+  header > *,
+  .summary > *,
+  .preamble > *,
+  .explanation > *,
+  .participation > *,
+  .benefits > *,
+  .requirements > *,
+  .sidebar .wrapper > * {
     padding: 2.5% 10%; }
 
 footer {
@@ -60,19 +74,10 @@ footer {
 
 header {
   background-color: #233541; }
-  header h1 {
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    background-image: url("/images/store.nike.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: #e6e6e6; }
-  header h2 {
-    color: #e6e6e6; }
 
-.summary, .benefits, .sidebar .wrapper {
+.summary,
+.benefits,
+.sidebar .wrapper {
   background-color: blue;
   background-image: '$photo-1';
   background-color: orange;
@@ -80,130 +85,89 @@ header {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  margin: 3em 0; }
+  background-size: cover; }
 
-.preamble::after, .explanation::after {
+.summary,
+.benefits {
+  padding: 6em 0; }
+
+.preamble::after,
+.explanation::after {
   content: '';
-  background-image: "$photo-1";
-  background-color: blue;
-  background-color: orange;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 300px;
-  display: block;
-  margin: 3em 0; }
+  height: 75vh;
+  display: block; }
 
 .summary {
-  background-image: url("/images/basketball.hoop.jpg"); }
+  background-image: url("/images/basketball.hoop.lg.jpg"); }
 
 .benefits {
-  background-image: url("/images/battle.ropes.jpg"); }
+  background-image: url("/images/weight.plate.lg.jpg"); }
 
 .sidebar .wrapper {
-  background-image: url("/images/blue.nike.jpg"); }
+  background-image: url("/images/blue.nike.lg.jpg"); }
 
 .preamble::after {
-  background-image: url("/images/gray.nike.jpg"); }
+  background-image: url("/images/gray.nike.lg.jpg"); }
 
 .explanation::after {
-  background-image: url("/images/orange.nike.jpg"); }
+  background-image: url("/images/orange.nike.lg.jpg"); }
 
 footer {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  flex-direction: column;
+  background-color: #8f4a7d;
+  padding: 1em 0;
+  overflow: hidden; }
   footer a {
-    margin: 1em; }
+    text-align: center;
+    display: block;
+    padding: .7em; }
+    footer a:active {
+      border-top: solid 1px #302746;
+      border-bottom: solid 1px #302746; }
 
 .sidebar .wrapper {
   display: flex;
-  flex-direction: column; }
-
-@media only screen and (min-width: 1600px) {
-  .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr); }
-
-  .intro, .supporting, .sidebar {
-    grid-column: 1/-1; }
-
-  .explanation, .requirements {
-    grid-column: 1/-1;
-    width: 100%; }
-    .explanation > *, .requirements > * {
-      grid-column: 4/-2; }
-
-  .preamble, .participation {
-    grid-column: 1/-1;
-    width: 100%; }
-    .preamble > *, .participation > * {
-      grid-column: 2/-4; }
-
-  .sidebar .wrapper {
-    grid-column: 1/-1;
-    width: 100%; }
+  flex-direction: column;
+  justify-content: space-evenly; }
+  @media only screen and (min-width: 1024px) {
     .sidebar .wrapper > * {
-      grid-column: 3/-3; }
+      padding: 0; } }
 
-  .summary, .benefits, .sidebar .wrapper {
-    background: none;
-    padding: 3em 0; }
-
-  .preamble, .explanation, .participation, .requirements {
-    background-color: orange;
-    background-image: "$photo-1-lg";
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 3em 0;
-    margin: 3em 0; }
-
-  .preamble::after, .explanation::after {
-    content: '';
-    display: none; }
-
-  .preamble {
-    background-image: url("/images/basketball.hoop.jpg"); }
-
-  .explanation {
-    background-image: url("/images/battle.ropes.jpg"); }
-
-  .participation {
-    background-image: url("/images/blue.nike.jpg"); }
-
-  .requirements {
-    background-image: url("/images/gray.nike.jpg"); }
-
-  footer {
-    display: flex;
-    justify-content: center; }
-    footer a {
-      margin: 1em; }
-
-  .sidebar .wrapper {
-    display: flex;
-    flex-direction: row; } }
 @media only screen and (min-width: 1024px) {
-  .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper {
+  .page-wrapper,
+  .preamble,
+  .explanation,
+  .participation,
+  .requirements,
+  .sidebar .wrapper {
     display: grid;
     grid-template-columns: repeat(10, 1fr); }
 
-  .intro, .supporting, .sidebar {
+  .intro,
+  .supporting,
+  .sidebar {
     grid-column: 1/-1; }
 
-  .explanation, .requirements {
+  .explanation,
+  .requirements {
     grid-column: 1/-1;
     width: 100%; }
-    .explanation > *, .requirements > * {
+    .explanation > *,
+    .requirements > * {
       grid-column: 4/-2; }
 
-  .preamble, .participation {
+  .preamble,
+  .participation {
     grid-column: 1/-1;
     width: 100%; }
-    .preamble > *, .participation > * {
+    .preamble > *,
+    .participation > * {
       grid-column: 2/-4; }
 
   .sidebar .wrapper {
@@ -212,45 +176,81 @@ footer {
     .sidebar .wrapper > * {
       grid-column: 3/-3; }
 
-  .summary, .benefits, .sidebar .wrapper {
+  .summary,
+  .benefits,
+  .sidebar .wrapper {
     background: none;
     padding: 3em 0; }
 
-  .preamble, .explanation, .participation, .requirements {
-    background-color: orange;
-    background-image: "$photo-2-lg";
+  .preamble,
+  .participation,
+  .requirements,
+  .sidebar .wrapper {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 3em 0;
-    margin: 3em 0; }
+    padding: 3em 0; } }
+@media only screen and (min-width: 1024px) and (min-width: 1024px) {
+  .explanation {
+    padding-bottom: 3rem; } }
 
-  .preamble::after, .explanation::after {
+@media only screen and (min-width: 1024px) {
+  .preamble::after,
+  .explanation::after {
     content: '';
     display: none; }
 
   .preamble {
-    background-image: url("/images/basketball.hoop.jpg"); }
-
-  .explanation {
-    background-image: url("/images/battle.ropes.jpg"); }
+    background-image: url("/images/basketball.hoop.lg.jpg"); }
 
   .participation {
-    background-image: url("/images/blue.nike.jpg"); }
+    background-image: url("/images/gray.nike.lg.jpg"); }
 
   .requirements {
-    background-image: url("/images/gray.nike.jpg"); }
+    background-image: url("/images/weight.plate.lg.jpg"); }
+
+  .sidebar .wrapper {
+    background-image: url("/images/blue.nike.lg.jpg"); }
 
   footer {
-    display: flex;
-    justify-content: center; }
+    flex-direction: row; }
     footer a {
       margin: 1em; }
+      footer a:active {
+        border: none; }
+      footer a:hover::after {
+        transform: scale(0.6) translatey(0%); }
+      footer a::after {
+        content: '';
+        width: 4em;
+        height: 4em;
+        display: block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        filter: brightness(100);
+        transform: scale(0) translatey(-100%);
+        transition: transform .5s ease-out; }
+      footer a:nth-of-type(1)::after {
+        background-image: url("/styleguide/assets/icons/svg/running-white.svg"); }
+      footer a:nth-of-type(2)::after {
+        background-image: url("/styleguide/assets/icons/svg/arm-white.svg"); }
+      footer a:nth-of-type(3)::after {
+        background-image: url("/styleguide/assets/icons/svg/dumbell-white.svg"); }
+      footer a:nth-of-type(4)::after {
+        background-image: url("/styleguide/assets/icons/svg/weightlifter-white.svg"); }
+      footer a:nth-of-type(5)::after {
+        background-image: url("/styleguide/assets/icons/svg/swimming-white.svg"); }
+
+  #zen-intro.intro header h1:hover {
+    background-image: url("/images/justdidit_web.jpg");
+    background-repeat: no-repeat;
+    color: red; }
 
   .sidebar .wrapper {
     display: flex;
-    flex-direction: row; } }
+    flex-direction: row;
+    padding-bottom: 40vh; } }
 /* -------------------------------- 
 
 xBasic style
@@ -424,17 +424,14 @@ xTypography
 -------------------------------- */
 h1,
 h2, h3 {
-  font-family: "Ultra", serif;
+  font-family: "Fugaz One", Helvetica, sans-serif;
   color: #233541; }
 
 h1 {
-  font-size: 4rem;
-  font-weight: 300;
-  line-height: 1.2;
-  margin: 0 0 0.4em; }
-  @media only screen and (min-width: 768px) {
-    h1 {
-      font-size: 6rem; } }
+  font-size: 6rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  color: #e6e6e6; }
   @media only screen and (min-width: 1024px) {
     h1 {
       font-size: 12rem; } }
@@ -443,35 +440,130 @@ h1 {
       font-size: 12rem; } }
 
 h2 {
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 1em 0;
-  color: #fefefe; }
+  color: #ffffff;
+  font-size: 3rem;
+  padding-bottom: 2rem; }
   @media only screen and (min-width: 768px) {
     h2 {
-      font-size: 1.8rem;
-      margin: 1em 0 1.4em; } }
+      font-size: 3.5rem; } }
 
 h3 {
-  font-weight: bold;
+  font-size: 2.6rem;
   text-transform: uppercase;
-  margin: 1em 0; }
-  @media only screen and (min-width: 768px) {
-    h3 {
-      font-size: 1.4rem;
-      margin: 1em 0 1em; } }
+  margin: 1em 0;
+  color: #302746;
+  text-shadow: 2px -2px #ffffff; }
+
+.benefits h3 {
+  color: #ffffff;
+  text-shadow: 2px -2px #233541; }
+  @media only screen and (min-width: 1024px) {
+    .benefits h3 {
+      color: #302746;
+      text-shadow: 2px -2px #ffffff;
+      padding-bottom: 0; } }
+
+@media only screen and (min-width: 1024px) {
+  .sidebar .wrapper h3 {
+    font-size: 2.6rem;
+    color: #ffffff;
+    text-shadow: 2px -2px #233541; } }
+
+a, a:visited {
+  transition: .5s;
+  color: #685598; }
+  a:hover, a:visited:hover {
+    color: #302746; }
 
 p {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   line-height: 1.4;
-  color: #507994; }
-  p a {
-    color: #302746;
-    text-decoration: underline; }
+  color: #302746;
+  text-shadow: 2px -2px #ffffff; }
   @media only screen and (min-width: 768px) {
     p {
-      font-size: 1.6rem;
+      font-size: 2rem;
       line-height: 1.6; } }
+
+.benefits p, .sidebar .wrapper * {
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-shadow: 2px -2px #233541; }
+  @media only screen and (min-width: 1024px) {
+    .benefits p, .sidebar .wrapper * {
+      font-size: 2.3rem;
+      line-height: 1.4;
+      color: #302746;
+      text-shadow: 2px -2px #ffffff; } }
+  .benefits p a, .benefits p a:visited, .sidebar .wrapper * a, .sidebar .wrapper * a:visited {
+    color: #cccccc;
+    text-decoration: underline; }
+    .benefits p a:hover, .benefits p a:visited:hover, .sidebar .wrapper * a:hover, .sidebar .wrapper * a:visited:hover {
+      color: #ffffff; }
+
+.summary * {
+  font-size: 2.6rem;
+  color: #ffffff;
+  text-shadow: 2px -2px #233541; }
+  @media only screen and (min-width: 1024px) {
+    .summary * {
+      font-size: 3.4rem;
+      color: #302746;
+      text-shadow: 2px -2px #ffffff; } }
+.summary a, .summary a:visited {
+  transition: .5s;
+  color: #cccccc;
+  text-decoration: underline; }
+  @media only screen and (min-width: 1024px) {
+    .summary a, .summary a:visited {
+      color: #685598; } }
+  .summary a:hover, .summary a:visited:hover {
+    color: #ffffff; }
+    @media only screen and (min-width: 1024px) {
+      .summary a:hover, .summary a:visited:hover {
+        color: #302746; } }
+
+.participation a, .participation a:visited, .requirements a, .requirements a:visited {
+  transition: .5s;
+  color: #685598;
+  text-decoration: underline; }
+  @media only screen and (min-width: 1024px) {
+    .participation a, .participation a:visited, .requirements a, .requirements a:visited {
+      color: #cccccc; } }
+  .participation a:hover, .participation a:visited:hover, .requirements a:hover, .requirements a:visited:hover {
+    color: #302746; }
+    @media only screen and (min-width: 1024px) {
+      .participation a:hover, .participation a:visited:hover, .requirements a:hover, .requirements a:visited:hover {
+        color: #ffffff; } }
+
+@media only screen and (min-width: 1024px) {
+  .requirements h3, .participation h3, .preamble h3 {
+    font-size: 2.6rem; } }
+@media only screen and (min-width: 1024px) {
+  .requirements p, .participation p, .preamble p {
+    font-size: 2.5rem; } }
+@media only screen and (min-width: 1024px) {
+  .requirements *, .participation *, .preamble * {
+    color: #ffffff;
+    text-shadow: 2px -2px #233541; } }
+
+footer {
+  font-size: 2rem; }
+  footer a, footer a:visited {
+    color: #d9d9d9;
+    transform: scale(1) translatey(25%); }
+    footer a:hover, footer a:visited:hover {
+      color: #ffffff;
+      transform: scale(1.5) translatey(10%); }
+
+@media only screen and (min-width: 1024px) {
+  .sidebar .wrapper * {
+    color: #ffffff;
+    text-shadow: 2px -2px #233541; } }
+
+abbr {
+  text-decoration: none;
+  font-style: italic; }
 
 /* -------------------------------- 
 
@@ -482,13 +574,6 @@ xIcons
   /* icons size */
   width: 32px;
   height: 32px; }
-
-#zen-introheader h1::before {
-  content: url("data:image/svg+xml;charset=UTF-8, <svg height='438pt' viewBox='0 -110 438 437' width='438pt' xmlns='http://www.w3.org/2000/svg'><path d='m140.171875 70.085938h157.65625v77.703124h-157.65625zm0 0'/><path d='m415.101562 48.953125h-10.9375v114.585937h10.9375c12.640626-.015624 22.886719-10.257812 22.898438-22.902343v-68.789063c-.015625-12.640625-10.261719-22.882812-22.898438-22.894531zm0 0'/><path d='m361.265625.5h-43.4375v216.875h43.4375c12.640625-.015625 22.886719-10.257812 22.898437-22.898438v-171.078124c-.011718-12.640626-10.257812-22.882813-22.898437-22.898438zm0 0'/><path d='m53.835938 23.398438v171.078124c.011718 12.640626 10.257812 22.886719 22.898437 22.898438h43.4375v-216.875h-43.4375c-12.640625.015625-22.886719 10.257812-22.898437 22.898438zm0 0'/><path d='m0 71.851562v68.785157c.0117188 12.644531 10.257812 22.886719 22.898438 22.902343h10.9375v-114.585937h-10.9375c-12.640626.011719-22.882813 10.257813-22.898438 22.898437zm0 0'/></svg>");
-  background-size: 32px 32px;
-  width: 32px;
-  height: 32px;
-  color: #233541; }
 
 /* -------------------------------- 
 

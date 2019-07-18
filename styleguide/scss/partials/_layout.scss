@@ -1,326 +1,328 @@
 // breakpoints
-   
-$S:     768px;   
-$M:     1024px;     
-$L:     1600px;   
-
+$S: 768px;
+$M: 1024px;
+$L: 1600px;
 // media queries
-
 @mixin MQ($canvas) {
-  @if $canvas == S {
-   @media only screen and (min-width: $S) { @content; } 
-  }
-  @else if $canvas == M {
-   @media only screen and (min-width: $M) { @content; } 
-  }
-  @else if $canvas == L {
-   @media only screen and (min-width: $L) { @content; } 
-  }
+    @if $canvas==S {
+        @media only screen and (min-width: $S) {
+            @content;
+        }
+    }
+    @else if $canvas==M {
+        @media only screen and (min-width: $M) {
+            @content;
+        }
+    }
+    @else if $canvas==L {
+        @media only screen and (min-width: $L) {
+            @content;
+        }
+    }
 }
 
 // mobile layout mixins
 @mixin layoutmobile {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 @mixin mobiletext {
-  padding: 2.5% 10%;
+    padding: 2.5% 10%;
 }
 
 @mixin smalltext {
-  padding: 0 25%;
+    padding: 0 25%;
 }
 
 // desktop layout mixins
 @mixin desktoplayout {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
 }
 
-@mixin fullspan { // fullwidth image span
-  grid-column: 1/-1;
+@mixin fullspan {
+    // fullwidth image span
+    grid-column: 1/-1;
 }
 
-@mixin largespan { // large content span
-  grid-column: 2/-2;
+@mixin largespan {
+    // large content span
+    grid-column: 2/-2;
 }
 
-@mixin midspan { // medium content span (mobile)
-  grid-column: 3/-3;
+@mixin midspan {
+    // medium content span (mobile)
+    grid-column: 3/-3;
 }
 
-@mixin midspanleft { // medium content span - left
-  grid-column: 2/-4;
+@mixin midspanleft {
+    // medium content span - left
+    grid-column: 2/-4;
 }
 
-@mixin midspanright { // medium content span - right
-  grid-column: 4/-2;
+@mixin midspanright {
+    // medium content span - right
+    grid-column: 4/-2;
 }
-
 
 // super light grid - it works with the .cd-container class inside style.scss
-
 @mixin column($percentage, $float-direction:left) {
-  width: 100% * $percentage;
-  float: $float-direction;
+    width: 100% * $percentage;
+    float: $float-direction;
 }
-
-
-
-
-
 
 // mobile layout
 .page-wrapper {
-  @include layoutmobile;
+    @include layoutmobile;
 }
 
-header, .summary, .preamble, .explanation, .participation, .benefits, .requirements, .sidebar .wrapper {
-  width: 100%;
-  &>* {
-    @include mobiletext;
-  }
+header,
+.summary,
+.preamble,
+.explanation,
+.participation,
+.benefits,
+.requirements,
+.sidebar .wrapper {
+    width: 100%;
+    &>* {
+        @include mobiletext;
+    }
 }
 
 footer {
-  @include smalltext;
+    @include smalltext;
 }
 
 header {
-  background-color: #233541;
+    background-color: #233541;
 }
 
-
-.summary, .benefits, .sidebar .wrapper {
-  background-color: blue;
-  background-image: '$photo-1';
-  background-color: orange;
-  padding: 3em 0;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  // margin: 3em 0;
-}
-
-.summary, .benefits {
-  padding: 6em 0;
-}
-
-.preamble::after, .explanation::after {
-  content: '';
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  height: 75vh;
-  display: block;
-  // margin: 3em 0;
-}
-
-
-// images
-.summary {
-  background-image: url('/images/basketball.hoop.lg.jpg');
-}
-
-.benefits {
-  background-image: url('/images/weight.plate.lg.jpg');
-}
-
+.summary,
+.benefits,
 .sidebar .wrapper {
-  background-image: url('/images/blue.nike.lg.jpg');
-}
-
-.preamble::after {
-  background-image: url('/images/gray.nike.lg.jpg');
-}
-
-.explanation::after {
-  background-image: url('/images/orange.nike.lg.jpg');
-}
-
-
-//footer styles
-footer {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: lighten(#4C2742, 20%);
-  padding: 1em 0;
-  overflow: hidden;
-  a {
-    text-align: center;
-    display: block;
-    padding: .7em;
-    &:active {
-      border-top: solid 1px #302746;
-      border-bottom: solid 1px #302746;
-    }
-  }
-}
-
-.sidebar .wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  &>* {
-    @include MQ(M) {
-      padding: 0;
-    }
-  }
-}
-
-
-
-
-
-
-// desktop layout
-
-@include MQ(M) {
-  .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper{
-    @include desktoplayout;
-  }
-
-  .intro, .supporting, .sidebar {
-    @include fullspan;
-  }
-
-  .explanation, .requirements{
-    @include fullspan;
-    width: 100%;
-    &>* {
-      @include midspanright;
-    }
-  }
-
-  .preamble, .participation{
-    @include fullspan;
-    width: 100%;
-    &>* {
-      @include midspanleft;
-    }
-  }
-
-  .sidebar .wrapper{
-    @include fullspan;
-    width: 100%;
-    &>* {
-      @include midspan;
-    }
-  }
-
-  //resets
-  .summary, .benefits, .sidebar .wrapper {
-    background: none;
+    background-color: blue;
+    background-image: '$photo-1';
+    background-color: orange;
     padding: 3em 0;
-  }
-  
-  // .preamble::after, .explanation::after {
-  //   content: '';
-  //   background: none;
-  // }
-  
-  //placeholders
-  .preamble, .participation, .requirements, .sidebar .wrapper {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 3em 0;
     // margin: 3em 0;
-  }
+}
 
-  .explanation {
-    @include MQ(M) {
-      padding-bottom: 3rem;
-    }
-  }
+.summary,
+.benefits {
+    padding: 6em 0;
+}
 
-  .preamble::after, .explanation::after {
+.preamble::after,
+.explanation::after {
     content: '';
-    display: none;
-  }
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 75vh;
+    display: block;
+    // margin: 3em 0;
+}
 
-  // images
-  .preamble {
+// images
+.summary {
     background-image: url('/images/basketball.hoop.lg.jpg');
-  }
+}
 
-  .participation {
-    background-image: url('/images/gray.nike.lg.jpg');
-  }
-
-  .requirements {
+.benefits {
     background-image: url('/images/weight.plate.lg.jpg');
-  }
+}
 
-  .sidebar .wrapper {
+.sidebar .wrapper {
     background-image: url('/images/blue.nike.lg.jpg');
-  }
+}
 
-  //footer styles
+.preamble::after {
+    background-image: url('/images/gray.nike.lg.jpg');
+}
 
-  footer {
-    flex-direction: row;
-    a {
-      margin: 1em;
-      &:active {
-        border: none;
-      }
-      &:hover::after {
-        transform: scale(.6) translatey(0%);
-      }
-      &::after {
-        content: '';
-        width: 4em;
-        height: 4em;
-        display: block;
-        background-size: contain;
-        background-repeat: no-repeat;
-        filter: brightness(100);
-        transform: scale(0) translatey(-100%);
-        transition: transform .5s ease-out;
-      }
-      &:nth-of-type(1)::after {
-        background-image: url('/styleguide/assets/icons/svg/running-white.svg');
-      }
-      &:nth-of-type(2)::after {
-        background-image: url('/styleguide/assets/icons/svg/arm-white.svg');
-      }
-      &:nth-of-type(3)::after {
-        background-image: url('/styleguide/assets/icons/svg/dumbell-white.svg');
-      }
-      &:nth-of-type(4)::after {
-        background-image: url('/styleguide/assets/icons/svg/weightlifter-white.svg');
-      }
-      &:nth-of-type(5)::after {
-        background-image: url('/styleguide/assets/icons/svg/swimming-white.svg');
-      }
-    }
-  }
-  
+.explanation::after {
+    background-image: url('/images/orange.nike.lg.jpg');
+}
 
-  .sidebar .wrapper {
+//footer styles
+footer {
     display: flex;
-    flex-direction: row;
-    padding-bottom: 40vh;
-  }
+    justify-content: center;
+    flex-direction: column;
+    background-color: lighten(#4C2742, 20%);
+    padding: 1em 0;
+    overflow: hidden;
+    a {
+        text-align: center;
+        display: block;
+        padding: .7em;
+        &:active {
+            border-top: solid 1px #302746;
+            border-bottom: solid 1px #302746;
+        }
+    }
+}
 
+.sidebar .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    &>* {
+        @include MQ(M) {
+            padding: 0;
+        }
+    }
+}
+
+// desktop layout
+@include MQ(M) {
+    .page-wrapper,
+    .preamble,
+    .explanation,
+    .participation,
+    .requirements,
+    .sidebar .wrapper {
+        @include desktoplayout;
+    }
+    .intro,
+    .supporting,
+    .sidebar {
+        @include fullspan;
+    }
+    .explanation,
+    .requirements {
+        @include fullspan;
+        width: 100%;
+        &>* {
+            @include midspanright;
+        }
+    }
+    .preamble,
+    .participation {
+        @include fullspan;
+        width: 100%;
+        &>* {
+            @include midspanleft;
+        }
+    }
+    .sidebar .wrapper {
+        @include fullspan;
+        width: 100%;
+        &>* {
+            @include midspan;
+        }
+    }
+    //resets
+    .summary,
+    .benefits,
+    .sidebar .wrapper {
+        background: none;
+        padding: 3em 0;
+    }
+    // .preamble::after, .explanation::after {
+    //   content: '';
+    //   background: none;
+    // }
+    //placeholders
+    .preamble,
+    .participation,
+    .requirements,
+    .sidebar .wrapper {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 3em 0;
+        // margin: 3em 0;
+    }
+    .explanation {
+        @include MQ(M) {
+            padding-bottom: 3rem;
+        }
+    }
+    .preamble::after,
+    .explanation::after {
+        content: '';
+        display: none;
+    }
+    // images
+    .preamble {
+        background-image: url('/images/basketball.hoop.lg.jpg');
+    }
+    .participation {
+        background-image: url('/images/gray.nike.lg.jpg');
+    }
+    .requirements {
+        background-image: url('/images/weight.plate.lg.jpg');
+    }
+    .sidebar .wrapper {
+        background-image: url('/images/blue.nike.lg.jpg');
+    }
+    //footer styles
+    footer {
+        flex-direction: row;
+        a {
+            margin: 1em;
+            &:active {
+                border: none;
+            }
+            &:hover::after {
+                transform: scale(.6) translatey(0%);
+            }
+            &::after {
+                content: '';
+                width: 4em;
+                height: 4em;
+                display: block;
+                background-size: contain;
+                background-repeat: no-repeat;
+                filter: brightness(100);
+                transform: scale(0) translatey(-100%);
+                transition: transform .5s ease-out;
+            }
+            &:nth-of-type(1)::after {
+                background-image: url('/styleguide/assets/icons/svg/running-white.svg');
+            }
+            &:nth-of-type(2)::after {
+                background-image: url('/styleguide/assets/icons/svg/arm-white.svg');
+            }
+            &:nth-of-type(3)::after {
+                background-image: url('/styleguide/assets/icons/svg/dumbell-white.svg');
+            }
+            &:nth-of-type(4)::after {
+                background-image: url('/styleguide/assets/icons/svg/weightlifter-white.svg');
+            }
+            &:nth-of-type(5)::after {
+                background-image: url('/styleguide/assets/icons/svg/swimming-white.svg');
+            }
+        }
+    }
+    #zen-intro.intro header h1:hover {
+        background-image: url('/images/justdidit_web.jpg');
+        background-repeat: no-repeat;
+        color: red;
+    }
+    .sidebar .wrapper {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 40vh;
+    }
 }
 
 // @include MQ(M) {
 //   .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper{
 //     @include desktoplayout;
 //   }
-
 //   .intro, .supporting, .sidebar {
 //     @include fullspan;
 //   }
-
 //   .explanation, .requirements{
 //     @include fullspan;
 //     width: 100%;
@@ -328,7 +330,6 @@ footer {
 //       @include midspanright;
 //     }
 //   }
-
 //   .preamble, .participation{
 //     @include fullspan;
 //     width: 100%;
@@ -336,7 +337,6 @@ footer {
 //       @include midspanleft;
 //     }
 //   }
-
 //   .sidebar .wrapper{
 //     @include fullspan;
 //     width: 100%;
@@ -344,18 +344,15 @@ footer {
 //       @include midspan;
 //     }
 //   }
-
 //   //resets
 //   .summary, .benefits, .sidebar .wrapper {
 //     background: none;
 //     // padding: 3em 0;
 //   }
-  
 //   // .preamble::after, .explanation::after {
 //   //   content: '';
 //   //   background: none;
 //   // }
-  
 //   //placeholders
 //   .preamble, .explanation, .participation, .requirements {
 //     background-color: orange;
@@ -367,35 +364,24 @@ footer {
 //     padding: 3em 0;
 //     // margin: 3em 0;
 //   }
-
 //   .preamble::after, .explanation::after {
 //     content: '';
 //     display: none;
 //   }
-
 //   // images
 //   .preamble {
 //     background-image: url('/images/basketball.hoop.lg.jpg');
-    
 //   }
-
 //   .explanation {
 //     background-image: url('/images/orange.nike.lg.jpg');
-    
 //   }
-
 //   .participation {
 //     background-image: url('/images/blue.nike.lg.jpg');
-    
 //   }
-
 //   .requirements {
 //     background-image: url('/CSS-Project/images/gray.nike.lg.jpg');
-    
 //   }
-
 //   //footer styles
-
 //   footer {
 //     flex-direction: row;
 //     a {
@@ -434,10 +420,8 @@ footer {
 //       }
 //     }
 //   }
-
 //   .sidebar .wrapper {
 //     display: flex;
 //     flex-direction: row;
-
 //   }
 // }
