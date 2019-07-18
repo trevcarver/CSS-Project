@@ -66,6 +66,11 @@ $L:     1600px;
   float: $float-direction;
 }
 
+
+
+
+
+
 // mobile layout
 .page-wrapper {
   @include layoutmobile;
@@ -84,20 +89,8 @@ footer {
 
 header {
   background-color: #233541;
-  h1 {
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    background-image: url('/CSS-Project/images/store.nike.lg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: #e6e6e6;
-  }
-  h2 {
-    color: #e6e6e6;
-  }
 }
+
 
 .summary, .benefits, .sidebar .wrapper {
   background-color: blue;
@@ -108,45 +101,45 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 3em 0;
+  // margin: 3em 0;
+}
+
+.summary, .benefits {
+  padding: 6em 0;
 }
 
 .preamble::after, .explanation::after {
   content: '';
-
-  background-image: "$photo-1";
-  background-color: blue;
-  background-color: orange;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
-  height: 300px;
+  height: 75vh;
   display: block;
-  margin: 3em 0;
+  // margin: 3em 0;
 }
 
 
 // images
 .summary {
-  background-image: url('/CSS-Project/images/basketball.hoop.lg.jpg');
+  background-image: url('/images/basketball.hoop.lg.jpg');
 }
 
 .benefits {
-  background-image: url('/CSS-Project/images/battle.ropes.lg.jpg');
+  background-image: url('/images/weight.plate.lg.jpg');
 }
 
 .sidebar .wrapper {
-  background-image: url('/CSS-Project/images/blue.nike.lg.jpg');
+  background-image: url('/images/blue.nike.lg.jpg');
 }
 
 .preamble::after {
-  background-image: url('/CSS-Project/images/gray.nike.lg.jpg');
+  background-image: url('/images/gray.nike.lg.jpg');
 }
 
 .explanation::after {
-  background-image: url('/CSS-Project/images/orange.nike.lg.jpg');
+  background-image: url('/images/orange.nike.lg.jpg');
 }
 
 
@@ -154,117 +147,38 @@ header {
 footer {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  background-color: lighten(#4C2742, 20%);
+  padding: 1em 0;
+  overflow: hidden;
   a {
-    margin: 1em;
+    text-align: center;
+    display: block;
+    padding: .7em;
+    &:active {
+      border-top: solid 1px #302746;
+      border-bottom: solid 1px #302746;
+    }
   }
 }
 
 .sidebar .wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  &>* {
+    @include MQ(M) {
+      padding: 0;
+    }
+  }
 }
+
+
+
+
+
 
 // desktop layout
-
-@include MQ(L) {
-  .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper{
-    @include desktoplayout;
-  }
-
-  .intro, .supporting, .sidebar {
-    @include fullspan;
-  }
-
-  .explanation, .requirements{
-    @include fullspan;
-    width: 100%;
-    &>* {
-      @include midspanright;
-    }
-  }
-
-  .preamble, .participation{
-    @include fullspan;
-    width: 100%;
-    &>* {
-      @include midspanleft;
-    }
-  }
-
-  .sidebar .wrapper{
-    @include fullspan;
-    width: 100%;
-    &>* {
-      @include midspan;
-    }
-  }
-
-  //resets
-  .summary, .benefits, .sidebar .wrapper {
-    background: none;
-    padding: 3em 0;
-  }
-  
-  // .preamble::after, .explanation::after {
-  //   content: '';
-  //   background: none;
-  // }
-  
-  //placeholders
-  .preamble, .explanation, .participation, .requirements {
-    background-color: orange;
-    background-image: "$photo-1-lg";
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 3em 0;
-    margin: 3em 0;
-  }
-
-  .preamble::after, .explanation::after {
-    content: '';
-    display: none;
-  }
-
-  // images
-  .preamble {
-    background-image: url('/CSS-Project/images/basketball.hoop.lg.jpg');
-    opacity: .4;
-  }
-
-  .explanation {
-    background-image: url('/CSS-Project/images/orange.nike.lg.jpg');
-    opacity: .4;
-  }
-
-  .participation {
-    background-image: url('/CSS-Project/images/blue.nike.lg.jpg');
-    opacity: .4;
-
-  }
-
-  .requirements {
-    background-image: url('/CSS-Project/images/gray.nike.lg.jpg');
-    opacity: .4;
-  }
-
-  //footer styles
-
-  footer {
-    display: flex;
-    justify-content: center;
-    a {
-      margin: 1em;
-    }
-  }
-
-  .sidebar .wrapper {
-    display: flex;
-    flex-direction: row;
-  }
-
-}
 
 @include MQ(M) {
   .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper{
@@ -311,15 +225,19 @@ footer {
   // }
   
   //placeholders
-  .preamble, .explanation, .participation, .requirements {
-    background-color: orange;
-    background-image: "$photo-2-lg";
+  .preamble, .participation, .requirements, .sidebar .wrapper {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 3em 0;
-    margin: 3em 0;
+    // margin: 3em 0;
+  }
+
+  .explanation {
+    @include MQ(M) {
+      padding-bottom: 3rem;
+    }
   }
 
   .preamble::after, .explanation::after {
@@ -329,65 +247,197 @@ footer {
 
   // images
   .preamble {
-    background-image: url('/CSS-Project/images/basketball.hoop.lg.jpg');
-    opacity: .4;
-  }
-
-  .explanation {
-    background-image: url('/CSS-Project/images/orange.nike.lg.jpg');
-    opacity: .4;
+    background-image: url('/images/basketball.hoop.lg.jpg');
   }
 
   .participation {
-    background-image: url('/CSS-Project/images/blue.nike.lg.jpg');
-    opacity: .4;
+    background-image: url('/images/gray.nike.lg.jpg');
   }
 
   .requirements {
-    background-image: url('/CSS-Project/images/gray.nike.lg.jpg');
-    opacity: .4;
+    background-image: url('/images/weight.plate.lg.jpg');
+  }
+
+  .sidebar .wrapper {
+    background-image: url('/images/blue.nike.lg.jpg');
   }
 
   //footer styles
 
   footer {
-    display: flex;
-    justify-content: center;
+    flex-direction: row;
     a {
       margin: 1em;
+      &:active {
+        border: none;
+      }
+      &:hover::after {
+        transform: scale(.6) translatey(0%);
+      }
+      &::after {
+        content: '';
+        width: 4em;
+        height: 4em;
+        display: block;
+        background-size: contain;
+        background-repeat: no-repeat;
+        filter: brightness(100);
+        transform: scale(0) translatey(-100%);
+        transition: transform .5s ease-out;
+      }
+      &:nth-of-type(1)::after {
+        background-image: url('/styleguide/assets/icons/svg/running-white.svg');
+      }
+      &:nth-of-type(2)::after {
+        background-image: url('/styleguide/assets/icons/svg/arm-white.svg');
+      }
+      &:nth-of-type(3)::after {
+        background-image: url('/styleguide/assets/icons/svg/dumbell-white.svg');
+      }
+      &:nth-of-type(4)::after {
+        background-image: url('/styleguide/assets/icons/svg/weightlifter-white.svg');
+      }
+      &:nth-of-type(5)::after {
+        background-image: url('/styleguide/assets/icons/svg/swimming-white.svg');
+      }
     }
   }
+  
 
   .sidebar .wrapper {
     display: flex;
     flex-direction: row;
+    padding-bottom: 40vh;
   }
-
 
 }
 
-// .summary, .benefits, .design-selection, .design-archives, .zen-resources, footer {
-//   @include largespan;
-// }
+// @include MQ(M) {
+//   .page-wrapper, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper{
+//     @include desktoplayout;
+//   }
 
-// .preamble::after, .explanation::after, .benefits::after, .requirements::after {
-//   content: '';
-//   @include fullspan;
-//   height: 70vh;
-//   border: solid black 1px;
-//   display: block;
-// }
+//   .intro, .supporting, .sidebar {
+//     @include fullspan;
+//   }
 
-// // grid styles to be used for mobile
+//   .explanation, .requirements{
+//     @include fullspan;
+//     width: 100%;
+//     &>* {
+//       @include midspanright;
+//     }
+//   }
 
-// .intro, .main, .sidebar {
-//   @include grid124;
-// }
+//   .preamble, .participation{
+//     @include fullspan;
+//     width: 100%;
+//     &>* {
+//       @include midspanleft;
+//     }
+//   }
 
-// header, .preamble, .explanation, .participation, .requirements, .sidebar .wrapper {
-//   @include largespan;
-// }
+//   .sidebar .wrapper{
+//     @include fullspan;
+//     width: 100%;
+//     &>* {
+//       @include midspan;
+//     }
+//   }
 
-// .zen-resources {
-//   @include midspan;
+//   //resets
+//   .summary, .benefits, .sidebar .wrapper {
+//     background: none;
+//     // padding: 3em 0;
+//   }
+  
+//   // .preamble::after, .explanation::after {
+//   //   content: '';
+//   //   background: none;
+//   // }
+  
+//   //placeholders
+//   .preamble, .explanation, .participation, .requirements {
+//     background-color: orange;
+//     background-image: "$photo-2-lg";
+//     background-attachment: fixed;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     padding: 3em 0;
+//     // margin: 3em 0;
+//   }
+
+//   .preamble::after, .explanation::after {
+//     content: '';
+//     display: none;
+//   }
+
+//   // images
+//   .preamble {
+//     background-image: url('/images/basketball.hoop.lg.jpg');
+    
+//   }
+
+//   .explanation {
+//     background-image: url('/images/orange.nike.lg.jpg');
+    
+//   }
+
+//   .participation {
+//     background-image: url('/images/blue.nike.lg.jpg');
+    
+//   }
+
+//   .requirements {
+//     background-image: url('/CSS-Project/images/gray.nike.lg.jpg');
+    
+//   }
+
+//   //footer styles
+
+//   footer {
+//     flex-direction: row;
+//     a {
+//       margin: 1em;
+//       &:active {
+//         border: none;
+//       }
+//       &:hover::after {
+//         transform: scale(.9) translatey(30%);
+//       }
+//       margin: 1em;
+//       &::after {
+//         content: '';
+//         width: 4em;
+//         height: 4em;
+//         display: block;
+//         background-size: contain;
+//         background-repeat: no-repeat;
+//         transform: scale(0) translatey(-100%);
+//         transition: .5s ease-out;
+//       }
+//       &:nth-of-type(1)::after {
+//         background-image: url('/styleguide/assets/icons/svg/running.svg');
+//       }
+//       &:nth-of-type(2)::after {
+//         background-image: url('/styleguide/assets/icons/svg/arm.svg');
+//       }
+//       &:nth-of-type(3)::after {
+//         background-image: url('/styleguide/assets/icons/svg/dumbell.svg');
+//       }
+//       &:nth-of-type(4)::after {
+//         background-image: url('/styleguide/assets/icons/svg/weightlifter.svg');
+//       }
+//       &:nth-of-type(5)::after {
+//         background-image: url('/styleguide/assets/icons/svg/swimming.svg');
+//       }
+//     }
+//   }
+
+//   .sidebar .wrapper {
+//     display: flex;
+//     flex-direction: row;
+
+//   }
 // }
