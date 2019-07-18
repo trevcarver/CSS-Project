@@ -88,8 +88,9 @@ footer {
 }
 
 header {
-  background-color: lighten(#233541, 30%);
+  background-color: #233541;
 }
+
 
 .summary, .benefits, .sidebar .wrapper {
   background-color: blue;
@@ -103,6 +104,10 @@ header {
   // margin: 3em 0;
 }
 
+.summary, .benefits {
+  padding: 6em 0;
+}
+
 .preamble::after, .explanation::after {
   content: '';
   background-attachment: fixed;
@@ -110,7 +115,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
 
-  height: 300px;
+  height: 75vh;
   display: block;
   // margin: 3em 0;
 }
@@ -160,7 +165,12 @@ footer {
 .sidebar .wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
+  &>* {
+    @include MQ(M) {
+      padding: 0;
+    }
+  }
 }
 
 
@@ -224,6 +234,12 @@ footer {
     // margin: 3em 0;
   }
 
+  .explanation {
+    @include MQ(M) {
+      padding-bottom: 3rem;
+    }
+  }
+
   .preamble::after, .explanation::after {
     content: '';
     display: none;
@@ -239,7 +255,7 @@ footer {
   }
 
   .requirements {
-    background-image: url('/images/orange.nike.lg.jpg');
+    background-image: url('/images/weight.plate.lg.jpg');
   }
 
   .sidebar .wrapper {
@@ -256,7 +272,7 @@ footer {
         border: none;
       }
       &:hover::after {
-        transform: scale(.9) translatey(30%);
+        transform: scale(.6) translatey(0%);
       }
       &::after {
         content: '';
@@ -270,19 +286,19 @@ footer {
         transition: transform .5s ease-out;
       }
       &:nth-of-type(1)::after {
-        background-image: url('/styleguide/assets/icons/svg/running.svg');
+        background-image: url('/styleguide/assets/icons/svg/running-white.svg');
       }
       &:nth-of-type(2)::after {
-        background-image: url('/styleguide/assets/icons/svg/arm.svg');
+        background-image: url('/styleguide/assets/icons/svg/arm-white.svg');
       }
       &:nth-of-type(3)::after {
-        background-image: url('/styleguide/assets/icons/svg/dumbell.svg');
+        background-image: url('/styleguide/assets/icons/svg/dumbell-white.svg');
       }
       &:nth-of-type(4)::after {
-        background-image: url('/styleguide/assets/icons/svg/weightlifter.svg');
+        background-image: url('/styleguide/assets/icons/svg/weightlifter-white.svg');
       }
       &:nth-of-type(5)::after {
-        background-image: url('/styleguide/assets/icons/svg/swimming.svg');
+        background-image: url('/styleguide/assets/icons/svg/swimming-white.svg');
       }
     }
   }
@@ -291,7 +307,7 @@ footer {
   .sidebar .wrapper {
     display: flex;
     flex-direction: row;
-    padding-bottom: 60vh;
+    padding-bottom: 40vh;
   }
 
 }

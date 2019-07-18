@@ -11,9 +11,10 @@ h2, h3 {
 }
 
 h1 {
-  font-size: 8rem;
-  line-height: 1.2;
-  margin: 0 0 0.4em;
+  font-size: 6rem;
+  padding-bottom: 1rem;
+  // line-height: 1.2;
+  // margin: 0 0 0.4em;
   text-transform: uppercase;
   // -webkit-text-fill-color: transparent;
   // -webkit-background-clip: text;
@@ -37,13 +38,13 @@ h1 {
 }
 
 h2 {
-  margin: 1em 0;
   color: $color-5;
   font-size: 3rem;
+  padding-bottom: 2rem;
 
   @include MQ(S) {
     font-size: 3.5rem;
-    margin: 1em 0 1.4em;
+    // margin: 1em 0 1.4em;
   }
 }
 
@@ -52,26 +53,39 @@ h3 {
   text-transform: uppercase;
   margin: 1em 0;
   color: $color-1;
-  text-shadow: 2px 2px $color-5;
+  text-shadow: 2px -2px $color-5;
   
-  @include MQ(S) {
-    font-size: 2.3rem;
-    margin: 1em 0 1em;
-  }
+  // @include MQ(S) {
+  //   // font-size: 2.3rem;
+  //   margin: 1em 0 1em;
+  // }
 }
 
 .benefits {
   h3 {
     color: $color-5;
-    text-shadow: 2px 2px $color-2;
+    text-shadow: 2px -2px $color-2;
+    @include MQ(M) {
+      color: $color-1;
+      text-shadow: 2px -2px $color-5;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.sidebar .wrapper h3 {
+  @include MQ(M) {
+    font-size: 2.6rem;
+    color: $color-5;
+    text-shadow: 2px -2px $color-2;
   }
 }
 
 a, a:visited {
   transition: .5s;
-  color: $color-1;
+  color: lighten($color-1, 25%);
   &:hover {
-    color: $color-3;
+    color: $color-1;
   }
 }
 
@@ -84,39 +98,120 @@ p {
   font-size: 1.8rem;
   line-height: 1.4;
   color: $color-1;
-  text-shadow: 2px 2px $color-5;
+  text-shadow: 2px -2px $color-5;
 
   @include MQ(S) {
-    font-size: 1.6rem;
+    font-size: 2rem;
     line-height: 1.6;
   }
 }
 
-.summary *, .benefits p, .sidebar .wrapper *{
+.benefits p, .sidebar .wrapper *{
   @include MQ(M) {
-    font-size: 1.4rem;
+    font-size: 2.3rem;
     line-height: 1.4;
     color: $color-1;
-    text-shadow: 2px 2px $color-5;
+    text-shadow: 2px -2px $color-5;
   }
   font-size: 2.5rem;
   color: $color-5;
-  text-shadow: 2px 2px $color-2;
+  text-shadow: 2px -2px $color-2;
   a, a:visited {
-    color: darken($color-5, 15%);
+    color: darken($color-5, 20%);
+    text-decoration: underline;
     &:hover {
       color: $color-5;
     }
   }
-} 
+}
+
+
+
+.summary {
+  * {
+    font-size: 2.6rem;
+    color: $color-5;
+    text-shadow: 2px -2px $color-2;
+    @include MQ(M) {
+      font-size: 3.4rem;
+      color: $color-1;
+      text-shadow: 2px -2px $color-5;
+    }
+  }
+  a, a:visited {
+    transition: .5s;
+    color: darken($color-5, 20%);
+    text-decoration: underline;
+    @include MQ(M) {
+      color: lighten($color-1, 25%);
+    }
+    &:hover {
+      color: $color-5;
+      @include MQ(M) {
+        color: $color-1;
+      }
+    }
+  }
+}
+
+.participation, .requirements {
+  a, a:visited {
+    transition: .5s;
+    color: lighten($color-1, 25%);
+    text-decoration: underline;
+    @include MQ(M) {
+      color: darken($color-5, 20%);
+    }
+    &:hover {
+      color: $color-1;
+      @include MQ(M) {
+        color: $color-5;
+      }
+    }
+  }
+}
+
+
+
+.requirements, .participation, .preamble {
+  h3 {
+    @include MQ(M) {
+      font-size: 2.6rem;
+    }
+  }
+  p {
+    @include MQ(M) {
+      font-size: 2.5rem;
+    }
+  }
+  * {
+    @include MQ(M) {
+      color: $color-5;
+      text-shadow: 2px -2px $color-2;
+    }
+  }
+}
 
 footer {
   font-size: 2rem;
   a, a:visited {
     color: darken($color-5, 15%);
+    transform: scale(1) translatey(25%);
     &:hover {
       color: $color-5;
-      transform: scale(1.3);
+      transform: scale(1.5) translatey(10%);
     }
   }
+}
+
+.sidebar .wrapper *{
+  @include MQ(M) {
+    color: $color-5;
+    text-shadow: 2px -2px $color-2;
+  }
+}
+
+abbr {
+  text-decoration: none;
+  font-style: italic;
 }
